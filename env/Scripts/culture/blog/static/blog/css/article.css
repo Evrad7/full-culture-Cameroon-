@@ -1,0 +1,100 @@
+.banner{
+    max-height: 350px;
+}
+
+.articles img{
+    max-height:200px
+}
+.articles >div{
+    border-top-style: dashed !important;
+}
+.articles a:hover i.bi{
+   transform: scale(1.1) ;
+}
+
+.articles a i.bi{
+    transition: .3s 0s ease;
+ }
+
+
+@media screen and (max-width:576px) {
+    .multiple-truncate{
+        overflow: hidden;
+        display: -webkit-box ;
+        -webkit-line-clamp:3;
+        -webkit-box-orient:vertical;
+    }
+}
+
+.content{
+    max-width:1000px;
+}
+
+.vertical-upper-separator, .vertical-lower-separator{
+    width:4px;
+}
+.vertical-upper-separator{
+    height: 55%;
+}
+.vertical-lower-separator{
+    height: 34%;
+}
+.vertical-separator .point{
+    transform: translateX(-50%);
+
+}
+.vertical-separator{
+  transform: translatex(50%);
+  
+}
+
+.vertical-separator .point{
+    margin: 2.2rem auto;
+}
+
+.search input{
+    width: 100%;
+    max-width: 800px;
+    padding-right:4.8rem;
+}
+.search button{
+    position: absolute;
+    top:-28%;
+    right:14px;
+    transform:rotate(90deg);
+    width:39px;
+    height: 65px;
+}
+.position-sticky{
+    top:50px;
+}
+
+.links .bi:hover{
+    color:var(--bs-primary);
+}
+
+.comment-separator:before{
+    content:"";
+    height: .75px;
+    background-color: var(--bs-secondary);
+    width:100%;
+
+}
+.comment-separator:after{
+    content:"";
+    height: .75px;
+    background-color: var(--bs-secondary);
+    width: 100%;
+
+}
+.comment-separator span{
+    white-space: nowrap;
+}
+textarea[name=comment]{
+    max-width:700px;
+}
+
+.comment form{
+    position:sticky;
+    top:2rem;
+}

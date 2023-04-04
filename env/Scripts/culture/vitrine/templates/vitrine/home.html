@@ -1,0 +1,266 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+    {% block title %} Accueil {%endblock title%}
+    {% block css %}
+      <link rel="stylesheet" type="text/css" href="{% static 'vitrine/css/home.css' %}">
+      <link rel="stylesheet" href="{% static 'css/glider.min.css' %}">
+    {% endblock css %}
+    {% block content %}
+    {% include "navbar.html" with active=1 %}
+    <div class="d-flex bg-warning justify-content-between overflow-hidden">
+      <div class="flex-grow-1 ps-4  py-2 d-flex flex-column align-items-center justify-content-center position-relative">
+        <div class="mb-1 links">
+          <a href="" class="link-light"><i class="bi bi-facebook fs-4 me-2"></i></a>
+          <a href="" class="link-light"><i class="bi bi-twitter fs-4 me-2"></i></a>
+          <a href="" class="link-light"><i class="bi bi-instagram fs-4 me-2"></i></a>
+          <a href="" class="link-light"><i class="bi bi-pinterest fs-4 me-2"></i></a>
+        </div>
+          <h2 class="text-success fw-bolder fst-italic text-center">Découvrez toute la richesse de la culture <br> camerounaise</h2>
+          <div class="separator-bar my-1 my-sm-2 my-md-5"></div>
+          <h2 class="text-light fst-italic text-center">Au coeur du Cameroun</h2>
+      </div>
+      <img src="{% static 'img/home.png' %}"  class="img-fluid home" alt="La culture camerounaise">
+    </div>
+    <p class="text-secondary text-center fs-5 my-4 mx-1 px-0 mx-md-5 px-md-5" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo optio non quisquam ea obcaecati 
+      ab nesciunt molestiae repellendus laborum modi debitis deleniti, sequi quasi nostrum doloribus inventore dicta itaque. Dolore</p>
+      <div class="row my-5 p-1" style="background-color: #383333;">
+          <div class="col-12 col-md-6 d-flex justify-content-center" >
+              <img src="{% static 'img/2.png' %}" class="img-fluid"  style="max-height: 400px;" alt="culture camerounaise">
+              <img src="{% static 'img/5.png' %}"  class="img-fluid" style="max-height: 400px;" alt="culture camerounaise">
+          </div>
+          <div class="text-light col-12 col-md-6 py-5 px-2 ">
+              <h2 class="text-center mb-4">Lorem ipsum, dolor sit amet consectetur.</h2>
+              <p class="text-center fs-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos fugiat, totam velit aliquam voluptatibus sunt unde 
+                  ipsum quod aut tempore delectus qui error natus quia. Dolores eaque beatae voluptatibus est.
+                  orem ipsum dolor sit amet, consectetur adipisicing elit. Quos fugiat, totam velit aliquam voluptatibus sunt unde 
+                  ipsum quod aut tempore delectus qui error natus quia. Dolores eaque beatae voluptatibus est.
+                  orem ipsum dolor sit amet, consectetur adipisicing elit. Quos fugiat, totam velit aliquam voluptatibus sunt unde 
+              </p>
+              <div class="text-end me-0 me-lg-3">
+                <a href="" class="btn text-warning  btn-transparent border-secondary border-end-0 border-start-0 d-inline-flex align-items-center btn-arrow">
+                  <span class="fst-italic">En savoir plus</span> <i class="ms-2 bi bi-arrow-right fs-4"></i>
+                </a>
+            </div>
+          </div>
+          <img src="" alt="">
+      </div>
+      <div>
+        <div class="img-separator overflow-hidden mb ">
+        </div>
+        <h1 class="text-primary text-center fst-italic">Lorem ipsum dolor sit amet consectetur</h1>
+        <div class="glider-contain position-relative">
+          <div class="glider overflow-hidden">
+            <div class="me-1 me-sm-2 me-md-4">
+              <img src="{% static 'img/culture_2.jpg' %}" class=""  alt="culture camerounaise ouest">
+            </div>
+            <div class="me-1 me-sm-2 me-md-4">
+              <img src="{% static 'img/culture_3.jpg' %}" class=""  alt="culture camerounaise ouest">
+            </div> 
+            <div class="me-1 me-sm-2 me-md-4">
+              <img src="{% static 'img/culture_1.png' %}" class=""  alt="culture camerounaise ouest">
+            </div>
+            <div class="me-1 me-sm-2 me-md-4">
+              <img src="{% static 'img/culture_4.jpg' %}" class=""  alt="culture camerounaise ouest">
+            </div> 
+            
+            <div class="me-1 me-sm-2 me-md-4">
+              <img src="{% static 'img/culture_2.jpg' %}" class=""  alt="culture camerounaise ouest">
+            </div>
+            <div class="me-1 me-sm-2 me-md-4">
+              <img src="{% static 'img/culture_3.jpg' %}" class=""  alt="culture camerounaise ouest">
+            </div>
+            <div class="me-1 me-sm-2 me-md-4">
+              <img src="{% static 'img/culture_1.png' %}" class=""  alt="culture camerounaise ouest">
+            </div> 
+          </div>
+          <button aria-label="Previous" class="glider-prev "><i class="bi bi-chevron-left text-light fs-1"></i></button>
+          <button aria-label="Next" class="glider-next"><i class="bi bi-chevron-right fs-1 text-light"  ></i></button>
+          <div role="tablist" class="dots"></div>
+        </div>
+        <div class="text-end mt-3 pe-1 pe-sm-5">
+          <a href="" class="btn text-success  btn-transparent border-secondary border-end-0 border-start-0 d-inline-flex align-items-center btn-arrow">
+            <span class="fst-italic">En savoir plus sur les photos</span> <i class="ms-2 bi bi-arrow-right fs-4"></i>
+          </a>
+      </div>
+       
+      </div>
+      <div class="px-1 ps-sm-3">
+        <div class="mt-5 mx-3 d-sm-flex d-inline-block mb-3">
+          <div class="d-inline">
+            <div class="point bg-primary d-inline-block me-1  me-sm-4 mt-4" >
+            </div>
+          </div>
+          <h1 class="text-primary d-inline fst-italic">Lorem ipsum dolor sit, amet consec adipisicing elit.</h1>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 order-2 order-md-1 d-flex flex-column align-items-center justify-content-center">
+            <p class="fs-5 text-center text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis unde earum et dignissimos est natus, tempore deserunt quo
+              consequuntur provident distinctio maiores expedita, nulla eos vero porro in doloribus! Temporibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias aliquid quis quam dignissimos,
+               quidem fuga obcaecati cum libero quos similique labore ullam tempore quod cupiditate voluptatem doloremque unde aliquam iure.</p>
+            <div>
+                <a href="" class="btn text-success  btn-transparent border-secondary border-end-0 border-start-0 d-flex align-items-center btn-arrow">
+                  <span class="fst-italic">En savoir plus</span> <i class="ms-2 bi bi-arrow-right fs-4"></i>
+                </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 order-1 order-md-2 d-flex justify-content-end mb-4 mb-md-0">
+            <img src="{% static 'img/gandoura.jpg' %}" class="img-fluid" alt="gandoura, culture camerounaise nord Cameroun">
+          </div>
+        </div>
+      </div>
+      <div class="px-1 ps-sm-3">
+        <div class="mt-5 mx-3 d-sm-flex d-inline-block mb-3">
+          <div class="d-inline">
+            <div class="point bg-primary d-inline-block me-1  me-sm-4 mt-4" >
+            </div>
+          </div>
+          <h1 class="text-primary d-inline fst-italic">Lorem ipsum dolor sit, amet consec adipisicing elit.</h1>
+        </div>
+        <div class="row">
+          <div class="col-0 col-md-3"></div>
+          <div class="col-0 col-md-6">
+            <p class="text-secondary fs-5 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda tenetur repellendus obcaecati iusto cupiditate 
+              soluta neque itaque ullam illum nemo? Dolor ex iste at doloremque illo dolorem tempore eaque corrupti!</p>
+          </div>
+          <div class="col-0 col-md-3"></div>
+          <div class="d-flex justify-content-center align-items-center">
+            <div class="col-0 col-md-2"></div>
+            <div class="col-12 col-md-8 d-flex justify-content-center picture-frame">
+              <div class="">
+                <div class="d-flex justify-content-end">                      
+                  <img src="{% static 'img/kaba2.jpg' %}" class="img-fluid d-block mt-5"  alt="kaba culture camerounaise">
+                </div>
+                <div class="d-flex justify-content-end">
+                  <img src="{% static 'img/kaba4.jpg' %}"  class="img-fluid d-block"  alt="kaba culture camerounaise">
+                </div>
+              </div>
+              <div class="">
+                <div class="d-flex justify-content-start">
+                  <img src="{% static 'img/kaba3.jpg' %}"   class="img-fluid d-block"  alt="kaba culture camerounaise">
+                </div>
+                <div class="d-flex justify-content-start">
+                  <img src="{% static 'img/kaba1.jpg' %}"  class="img-fluid d-block"alt="kaba culture camerounaise">
+                </div>
+              </div>
+            </div>
+            <div class="col-0 col-md-2"></div>
+         
+          </div>
+        </div>
+        <div class="text-center mt-3">
+          <a href="" class="btn text-success  btn-transparent border-secondary border-end-0 border-start-0 d-inline-flex align-items-center btn-arrow">
+            <span class="fst-italic">En savoir plus</span> <i class="ms-2 bi bi-arrow-right fs-4"></i>
+          </a>
+      </div>
+      </div>
+      <div>
+        <div class="mt-5 mx-3 d-sm-flex d-inline-block mb-3">
+          <div class="d-inline">
+            <div class="point bg-primary d-inline-block me-1  me-sm-4  mt-4" >
+            </div>
+          </div>
+          <h1 class="text-primary d-inline fst-italic">Les articles les plus consultés.</h1>
+        </div>
+        <div class="d-flex justify-content-center  mt-5 flex-wrap ">
+          
+          <div class="d-flex">
+            <div class="vertical-separator  d-block d-md-none">
+              <div class="vertical-upper-separator bg-primary mt-3">
+
+              </div>
+              <div class="point bg-primary"></div>
+              <div class="vertical-lower-separator bg-primary ">
+
+              </div>
+            </div>
+            <div>
+              <div class="card bg-transparent mb-5" style="max-width:25rem;">
+                <div class="px-2">
+                  <img src="{% static 'img/article1.jpg' %}" class="card-img-top img-fluid border rounded-0" alt="Culture camerounaise">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title  fst-italic text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h5>
+                  <p class="card-text text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, sunt velit ex illo reiciendis totam aspernatur dicta delectus animi fugit culpa obcaecati sit. Et maiores iste exercitationem quo illo eius.</p>
+                  <div class="text-center">
+                    <a href="#" class="btn btn-warning border border-secondary fst-italic">Lire plus ...</a>
+                  </div>
+                </div>
+              </div>
+              <div class="card bg-transparent" style="max-width:25rem;">
+                <div class="px-2">
+                  <img src="{% static 'img/article2.jpg' %}" class="card-img-top img-fluid rounded-0" alt="Culture camerounaise">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title  fst-italic text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h5>
+                  <p class="card-text text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, sunt velit ex illo reiciendis totam aspernatur dicta delectus animi fugit culpa obcaecati sit. Et maiores iste exercitationem quo illo eius.</p>
+                  <div class="text-center">
+                    <a href="#" class="btn btn-warning border border-secondary fst-italic">Lire plus ...</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="vertical-separator  mx-md-1 mx-lg-5 d-none d-md-block">
+            <div class="vertical-upper-separator bg-primary mt-3">
+
+            </div>
+            <div class="point bg-primary"></div>
+            <div class="vertical-lower-separator bg-primary ">
+
+            </div>
+          </div>
+      
+          <div class="d-flex justify-content-between">
+            <div class="vertical-separator  d-block d-md-none">
+              <div class="vertical-upper-separator bg-primary mt-3">
+
+              </div>
+              <div class="point bg-primary"></div>
+              <div class="vertical-lower-separator bg-primary ">
+
+              </div>
+            </div>
+            <div>
+              <div class="card bg-transparent mb-5" style="max-width:25rem;">
+                <div class="px-2">
+                  <img src="{% static 'img/article3.png' %}" class="card-img-top img-fluid rounded-0" alt="Culture camerounaise">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title  fst-italic text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h5>
+                  <p class="card-text text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, sunt velit ex illo reiciendis totam aspernatur dicta delectus animi fugit culpa obcaecati sit. Et maiores iste exercitationem quo illo eius.</p>
+                  <div class="text-center">
+                    <a href="#" class="btn btn-warning border border-secondary fst-italic">Lire plus ...</a>
+                  </div>
+                </div>
+              </div>
+              <div class="card bg-transparent" style="max-width:25rem;">
+                <div class="px-2">
+                  <img src="{% static 'img/article4.jpg' %}" class="card-img-top img-fluid rounded-0" alt="Culture camerounaise">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title  fst-italic text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h5>
+                  <p class="card-text text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, sunt velit ex illo reiciendis totam aspernatur dicta delectus animi fugit culpa obcaecati sit. Et maiores iste exercitationem quo illo eius.</p>
+                  <div class="text-center">
+                    <a href="#" class="btn btn-warning border border-secondary fst-italic">Lire plus ...</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+       
+          </div>
+        </div>
+        <div class="d-flex justify-content-center align-items-center my-4">
+            <a href="" class="btn btn-dark fst-italic">Plus d'articles</a>
+        </div>
+      </div>
+
+      {% include "vitrine/newsletter.html" %}
+    {% endblock content %}
+
+
+    {% block js %}
+    <script src="{% static 'js/glider.min.js' %}"></script>
+    <script src="{% static 'vitrine/js/home.js' %}"></script>
+    {% endblock js %}

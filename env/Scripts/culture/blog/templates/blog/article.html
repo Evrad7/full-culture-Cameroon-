@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+    {% block title %} {{region.name}} {%endblock title%}
+    {% block css %}
+      <link rel="stylesheet" type="text/css" href="{% static 'blog/css/article.css' %}">
+    {% endblock css %}
+    {% block content %}
+    {% include "navbar.html" with active=4 %}
+      <div>
+        <img src="{% static 'img/banner.jpg' %}" alt="culture camerounaise" class="banner w-100">
+    </div>
+    <div class="container mb-5">
+      <h1 class="text-primary fst-italic mb-4">Lorem ipsum dolor sit amet, consectetur</h1>
+        <div class="row justify-content-between mx-1">
+          <div class="content col-12 col-lg-9 order-2 order-lg-1 d-flex ">
+            <div class="vertical-separator me-1 me-md-5">
+              <div class="vertical-upper-separator bg-primary mt-3">
+    
+              </div>
+              <div class="point bg-primary"></div>
+              <div class="vertical-lower-separator bg-primary ">
+    
+              </div>
+            </div>
+            <div>
+              <p class="fs-5 text-secondary">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
+                 doloremque necessitatibus sit? Quas molestiae, quidem provident repudiandae neque nostrum praesentium.
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
+                 doloremque necessitatibus sit? Quas molestiae, quidem provident repudiandae neque nostrum praesentium.
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
+                 doloremque necessitatibus sit? Quas molestiae, quidem provident repudiandae neque nostrum praesentium.
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
+                 doloremque necessitatibus sit? Quas molestiae, quidem provident repudiandae neque nostrum praesentium.
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
+                 doloremque necessitatibus sit? Quas molestiae, quidem provident repudiandae neque nostrum praesentium.Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
+                 doloremque necessitatibus sit? Quas molestiae, quidem provident repudiandae neque nostrum praesentium.
+              </p>
+              <div class="my-5">
+                <img src="{% static 'img/article5.PNG' %}" alt="culture camerounaise" class="img-fluid">
+              </div>
+              <p class="fs-5 text-secondary">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
+                 doloremque necessitatibus sit? Quas molestiae, quidem provident repudiandae neque nostrum praesentium.
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
+                 doloremque necessitatibus sit? Quas molestiae, quidem provident repudiandae neque nostrum praesentium.
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
+                 doloremque necessitatibus sit? Quas molestiae, quidem provident repudiandae neque nostrum praesentium.
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
+                 doloremque necessitatibus sit? Quas molestiae, quidem provident repudiandae neque nostrum praesentium.
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
+                 doloremque necessitatibus sit? Quas molestiae, quidem provident repudiandae neque nostrum praesentium.Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
+                 dolore </p>
+                 <div class="my-5">
+                  <img src="{% static 'img/article6.PNG' %}" alt="culture camerounaise" class="img-fluid">
+                </div>
+            </div>
+            
+          </div>
+          <div  class="order-1 order-lg-1 col-12 col-lg-3">
+           <div class="border-2 p-2 shadow bg-warning position-sticky rounded mb-4">
+            <a href="#newsletter" class="btn btn-dark">S'abonner à la newsletter</a>
+            <form action="" class=" mt-3">
+              <div class="search position-relative">
+                <label for="search" class=" fs-5 fst-italic">Rechercher dans les articles</label>
+                <div class="position-relative">
+                  <input type="search"  id="search" class="form-control border-top-0 border-start-0 border-end-0 rounded-top">
+                  <button type="submit" class="btn btn-light p-0"><i class="bi bi-search"></i></button>
+                </div>
+              
+  
+              </div>
+          </form>
+           </div>
+          </div>
+        </div>
+       
+      <div class="my-3">
+        <h5 class="comment-separator d-flex align-items-center" ><span class="mx-2">Les commentaires</span> </h5>
+        <div class="row mt-5 ">
+          <div class="col-12 col-lg-6 order-3 order-lg-1">
+            <div class="mb-5">
+              <p class="fs-5 text-secondary">Lorem ipsum dolor
+                 sit amet consectetur adipisicing elit. Rem enim dignissimos earum ipsum assumenda qui sit minus facilis repudiandae
+                 , unde maiores id, corrupti consectetur cumque corporis possimus soluta laborum sunt!</p>
+                 <div class="text-end fst-italic"><span>03 Avril 2020</span></div>
+                 <hr>
+            </div>
+            <div class="my-5">
+              <p class="fs-5 text-secondary">Lorem ipsum dolor
+                 sit amet consectetur adipisicing elit. Rem enim dignissimos earum ipsum assumenda qui sit minus facilis repudiandae
+                 , unde maiores id, corrupti consectetur cumque corporis possimus soluta laborum sunt!</p>
+                 <div class="text-end fst-italic"><span>03 Avril 2020</span></div>
+                 <hr>
+            </div>
+          </div>
+          <div class="col-0 col-lg-1 order-2"></div>
+        
+        <div class="col-12 col-lg-5 order-1 order-lg-3 mb-4 comment">
+          <form action="" class="">
+            <textarea name="comment" id="comment" cols="20" rows="5" class="form-control">
+              Laissez vos impressions
+            </textarea>
+            <div class="mt-3 ms-5">
+              <button type="submit" class="btn btn-warning fst-italic fw-bold">Envoyer</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      </div>
+    
+      <div class="my-5">
+        <h1 class="text-primary fst-italic">Ceci pourrait vous interessez</h1>
+        <div class=" container articles mt-5">
+          <div class="border-top border-secondary border-2 row align-items-start align-items-lg-center  justify-content-between pt-3 pt-md-4 mb-4 mx-1">
+            <div class="col-4 col-lg-2 align-self-start text-center">
+              <img src="{% static 'img/article2.jpg' %}" alt="culture ouest cameroun" class="img-fluid">
+            </div>
+            <div class="col-0  col-lg-2 d-none d-lg-block col-lg-3 fst-italic align-self-center">
+              <h3>Lorem ipsum dolor sit amet, consectetur </h3>
+            </div>
+            <div class="col-6 col-lg-6 d-flex flex-column align-self-center ">
+              <h3  class="fs-5 d-block d-lg-none fst-italic">Lorem ipsum dolor sit amet, consectetur </h3>
+              <p class="text-secondary multiple-truncate">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur aut iure ab officiis, totam reprehenderit pariatur,
+                  quod magni harum maiores necessitatibus sit omnis impedit mollitia suscipit a incidunt ipsum veritatis.
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="col-2 col-lg-1 text-center align-self-center">
+                <a href="" class="link-secondary text-decoration-none">
+                  <i class=" fs-2 text-primary bi bi-play-circle-fill d-block"></i>
+                  <i class="fs-6">Lire l'article</i>
+                </a>
+            
+            </div>
+          </div>
+          <div class="border-top border-secondary border-2 row align-items-start align-items-lg-center  justify-content-between pt-3 pt-md-4 mb-4 mx-1">
+            <div class="col-4 col-lg-2 align-self-start text-center">
+              <img src="{% static 'img/chefferie1.PNG' %}" alt="culture ouest cameroun" class="img-fluid">
+            </div>
+            <div class="col-0  col-lg-2 d-none d-lg-block col-lg-3 fst-italic align-self-center">
+              <h3>Lorem ipsum dolor sit amet, consectetur </h3>
+            </div>
+            <div class="col-6 col-lg-6 d-flex flex-column align-self-center ">
+              <h3  class="fs-5 d-block d-lg-none fst-italic">Lorem ipsum dolor sit amet, consectetur </h3>
+              <p class="text-secondary multiple-truncate">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur aut iure ab officiis, totam reprehenderit pariatur,
+                  quod magni harum maiores necessitatibus sit omnis impedit mollitia suscipit a incidunt ipsum veritatis.
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="col-2 col-lg-1 text-center align-self-center">
+                <a href="" class="link-secondary text-decoration-none">
+                  <i class=" fs-2 text-primary bi bi-play-circle-fill d-block"></i>
+                  <i class="fs-6">Lire l'article</i>
+                </a>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {% include "vitrine/newsletter.html" %} 
+   
+    {% endblock content %}
+  
+    {% block js %}
+    {% endblock js %}

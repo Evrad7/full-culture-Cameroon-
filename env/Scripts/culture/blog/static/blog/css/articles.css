@@ -1,0 +1,71 @@
+.pretty-dash{
+    height: 4px;
+    width: 100%;
+    max-width: 300px;
+}
+@media screen and (max-width:992px) {
+    .pretty-dash{
+        max-width: 200px;
+    }
+ 
+}
+@media screen and (max-width:607px) {
+    .pretty-dash{
+        max-width: 100px;
+    }
+ 
+}
+@media screen and (max-width:455px) {
+    .pretty-dash{
+        max-width: 50px;
+    }
+ 
+}
+@media screen and (max-width:384px) {
+    .pretty-dash{
+        max-width: 20px;
+    }
+ 
+}
+
+.sections > div{
+    cursor: pointer;
+}
+.sections > div:hover{
+    color:var(--bs-primary)
+}
+.search input{
+    max-width: 800px;
+}
+.search button{
+    position: absolute;
+    top:-12px;
+    right:25px;
+    transform:rotate(90deg);
+    width:39px;
+    height: 65px;
+}
+
+.articles img{
+    max-height:200px
+}
+.articles >div{
+    border-top-style: dashed !important;
+}
+.articles a:hover i.bi{
+   transform: scale(1.1) ;
+}
+
+.articles a i.bi{
+    transition: .3s 0s ease;
+ }
+
+
+@media screen and (max-width:576px) {
+    .multiple-truncate{
+        overflow: hidden;
+        display: -webkit-box ;
+        -webkit-line-clamp:3;
+        -webkit-box-orient:vertical;
+    }
+}

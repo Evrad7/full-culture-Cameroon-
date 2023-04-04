@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+    {% block title %} Contact {%endblock title%}
+    {% block css %}
+    {% endblock css %}
+    {% block content %}
+    {% include "navbar.html" with active=6 %}
+    <div class="row justify-content-center my-5 mx-2">
+        <div class="col-12 col-md-10 col-lg-8 col-xl-6 shadow shadow-2 border rounded px-3 py-4 bg-light ">
+            <div class="mb-2 text-center links">
+                <a href="" class="link-success"><i class="bi bi-facebook fs-4 me-2"></i></a>
+                <a href="" class="link-success"><i class="bi bi-twitter fs-4 me-2"></i></a>
+                <a href="" class="link-success"><i class="bi bi-instagram fs-4 me-2"></i></a>
+                <a href="" class="link-success"><i class="bi bi-pinterest fs-4 me-2"></i></a>
+              </div>
+              <h3 class="text-warning">Contactez nous via le formulaire</h3>
+            <form action="" method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="mb-3">
+                    <label for="{{field.id_for_label}}" class="form-label ">{{field.label}}</label>
+                    {{field}}
+                    <div>
+                        {% for error in field.errors %}
+                            <small class="text-danger">{{error}}</small> <br>
+                        {% endfor%}
+                    </div>
+                </div>
+                
+                {% endfor %}
+                <div class="d-flex justify-content-center">
+                   <button type="submit" class="btn btn-warning fw-bold fst-italic">Envoyer</button>
+                </div>
+            </form>
+          </div>
+    
+      </div>
+
+    {% endblock content %}
+  
+    {% block js %}
+    {% endblock js %}

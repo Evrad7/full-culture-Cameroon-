@@ -1,0 +1,71 @@
+.pretty-dash{
+    height: 4px;
+    width: 100%;
+    max-width: 300px;
+}
+@media screen and (max-width:992px) {
+    .pretty-dash{
+        max-width: 200px;
+    }
+ 
+}
+@media screen and (max-width:607px) {
+    .pretty-dash{
+        max-width: 100px;
+    }
+ 
+}
+@media screen and (max-width:455px) {
+    .pretty-dash{
+        max-width: 50px;
+    }
+ 
+}
+@media screen and (max-width:384px) {
+    .pretty-dash{
+        max-width: 20px;
+    }
+ 
+}
+
+.pair-picture img{
+    max-width: 500px;;
+}
+.line-separator{
+    height: 4px;
+    width:100%;
+}
+
+button.glider-prev{
+    transform: translateX(15px); 
+  }
+  button.glider-next{
+     transform: translateX(-15px); 
+   }
+   
+  .glider-contain:before{
+    content:"";
+    position: absolute;
+    width:calc(100% / 9);
+    max-width: 75px;
+    height: 100%;
+    top:0;
+    left:0;
+    background-color:transparent;
+    z-index: 1;
+    background-image:linear-gradient(to right , rgba(0, 0, 0, 1),  rgba(0, 0, 0, .5), rgba(0, 0, 0, .2), transparent);
+
+  }
+  .glider-contain:after{
+    content:"";
+    position: absolute;
+    width:calc(100% / 9);
+    max-width:75px;
+    height: 100%;
+    top:0;
+    right:0;
+    background-color:transparent;
+    z-index: 1;
+    background-image:linear-gradient(to left , rgba(0, 0, 0, 1),  rgba(0, 0, 0, .5), rgba(0, 0, 0, .2), transparent);
+    
+  }

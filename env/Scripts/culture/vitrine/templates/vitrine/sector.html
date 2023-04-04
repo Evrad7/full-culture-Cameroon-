@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+    {% block title %} {{sector.name}} {%endblock title%}
+    {% block css %}
+      <link rel="stylesheet" type="text/css" href="{% static 'vitrine/css/section.css' %}">
+      <link rel="stylesheet" href="{% static 'css/glider.min.css' %}">
+    {% endblock css %}
+    {% block content %}
+    {% include "navbar.html" with active=2 %}
+    
+    <div class="img-separator overflow-hidden mb ">
+    </div>
+      <h1 class="container">
+          <span class="text-primary d-block">Art vestimentaire</span> 
+          <span class="text-success text-center d-block ">camerounais</span>
+      </h1>
+    <div class="img-separator overflow-hidden mb ">
+    </div>
+    <div class="my-5">
+      <h2 class=" text-primary fst-italic container">Lorem ipsum dolor sit amet consectetur.</h2>
+      <div class="glider-contain position-relative">
+        <div class="glider overflow-hidden" id="glider-1">
+          <div class="me-1 me-sm-2 me-md-4">
+            <img src="{% static 'img/kaba6 - carousel.PNG' %}" class=""  alt="culture camerounaise ouest">
+          </div>
+          <div class="me-1 me-sm-2 me-md-4">
+            <img src="{% static 'img/kaba2 -carousel.jpg' %}" class=""  alt="culture camerounaise ouest">
+          </div> 
+          <div class="me-1 me-sm-2 me-md-4">
+            <img src="{% static 'img/kaba3 - carousel.jpg' %}" class=""  alt="culture camerounaise ouest">
+          </div>
+          <div class="me-1 me-sm-2 me-md-4">
+            <img src="{% static 'img/kaba4 -carousel.jpg' %}" class=""  alt="culture camerounaise ouest">
+          </div> 
+          <div class="me-1 me-sm-2 me-md-4">
+            <img src="{% static 'img/kaba7 - carousel.PNG' %}" class=""  alt="culture camerounaise ouest">
+          </div>
+          <div class="me-1 me-sm-2 me-md-4">
+            <img src="{% static 'img/kaba8 - carousel.PN' %}G" class=""  alt="culture camerounaise ouest">
+          </div> 
+        </div>
+        <button aria-label="Previous" class="glider-prev glider-prev-1"><i class="bi bi-chevron-left text-light fs-1"></i></button>
+        <button aria-label="Next" class="glider-next glider-next-1"><i class="bi bi-chevron-right fs-1 text-light"  ></i></button>
+        <div role="tablist" class="dots"></div>
+      </div>
+      <p class="fs-5 container text-secondary my-5">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+        quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+         sapiente sint placeat distinctio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+         quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+          sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+        quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+         sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+         quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+          sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+          quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+           sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+           quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+            sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+            quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+             sapiente sint placeat distinctio.
+      </p>
+    </div>
+    <div class="d-flex align-items-center container my-5">
+      <div class="point bg-success d-inline-block me-1  me-sm-4 " >
+      </div>
+      <div class="horizontal-separator bg-success w-100">
+      </div>
+    </div>
+
+    <div class="container my-5">
+      <h2 class="text-primary fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing </h2>
+      <div class="text-center mx-1">
+        <img src="{% static 'img/gandoura.jpg' %}" alt="gandoura culture camerounaise" class="img-fluid">
+      </div>
+      <p class="fs-5 text-secondary my-5">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+        quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+         sapiente sint placeat distinctio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+         quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+          sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+        quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+         sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+         quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+          sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+          quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+           sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+           quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+            sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+            quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+             sapiente sint placeat distinctio.
+      </p>
+     
+    </div>
+
+    <div class="d-flex align-items-center container my-5">
+      <div class="point bg-success d-inline-block me-1  me-sm-4 " >
+      </div>
+      <div class="horizontal-separator bg-success w-100">
+      </div>
+    </div>
+   
+    <div class="my-5">
+      <h2 class="text-primary container fst-italic">Lorem ipsum dolor sit amet consectetur.</h2>
+      <div class="glider-contain position-relative">
+        <div class="glider overflow-hidden" id="glider-2">
+          <div class="me-1 me-sm-2 me-md-4">
+            <img src="{% static  'img/culture_2.jpg' %}" class=""  alt="culture camerounaise ouest">
+          </div>
+          <div class="me-1 me-sm-2 me-md-4">
+            <img src="{% static  'img/culture_3.jpg' %}" class=""  alt="culture camerounaise ouest">
+          </div> 
+          <div class="me-1 me-sm-2 me-md-4">
+            <img src="{% static  'img/culture_1.png' %}" class=""  alt="culture camerounaise ouest">
+          </div>
+          <div class="me-1 me-sm-2 me-md-4">
+            <img src="{% static  'img/culture_4.jpg' %}" class=""  alt="culture camerounaise ouest">
+          </div> 
+          
+          <div class="me-1 me-sm-2 me-md-4">
+            <img src="{% static  'img/culture_2.jpg' %}" class=""  alt="culture camerounaise ouest">
+          </div>
+          <div class="me-1 me-sm-2 me-md-4">
+            <img src="{% static  'img/culture_3.jpg' %}" class=""  alt="culture camerounaise ouest">
+          </div>
+          <div class="me-1 me-sm-2 me-md-4">
+            <img src="{% static  'img/culture_1.png' %}" class=""  alt="culture camerounaise ouest">
+          </div> 
+        </div>
+        <button aria-label="Previous" class="glider-prev glider-prev-2"><i class="bi bi-chevron-left text-light fs-1"></i></button>
+        <button aria-label="Next" class="glider-next glider-next-2"><i class="bi bi-chevron-right fs-1 text-light"  ></i></button>
+        <div role="tablist" class="dots"></div>
+      </div>
+      <p class="fs-5 text-secondary my-5 container">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+        quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+         sapiente sint placeat distinctio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+         quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+          sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+        quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+         sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+         quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+          sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+          quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+           sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+           quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+            sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+            quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+             sapiente sint placeat distinctio.
+      </p>
+    </div>
+
+    
+    <div class="d-flex align-items-center container my-5">
+      <div class="point bg-success d-inline-block me-1  me-sm-4 " >
+      </div>
+      <div class="horizontal-separator bg-success w-100">
+      </div>
+    </div>
+
+    <div class="container my-5">
+      <h2 class="text-primary fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing </h2>
+      <div class="row justify-content-between">
+        <div class="col-12 col-md-6 col-lg-8 order-2 order-md-1">
+          <p class="fs-5 text-secondary my-2 my-md-5">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+            quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+             sapiente sint placeat distinctio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+             quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+              sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+            quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+             sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+             quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+              sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+              quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+               sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+               quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+                sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
+                quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
+                 sapiente sint placeat distinctio.
+          </p>
+        </div>
+        <div class="col-12 col-md-6 order-1  col-lg-4 order-md-2 pt-5 text-center">
+          <img src="{% static  'img/nord-ouest.jpg' %}" alt="culture camerounaise nord ouest" class="img-fluid" style="max-height: 500px;">
+        </div>
+       
+      </div>
+      
+    </div>
+
+    {% include "vitrine/newsletter.html" %}
+    
+    {% endblock content %}
+
+
+    {% block js %}
+    <script src="{% static 'js/glider.min.js' %}"></script>
+    <script src="{% static 'vitrine/js/section.js' %}"></script>
+    {% endblock js %}

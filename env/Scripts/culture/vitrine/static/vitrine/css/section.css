@@ -1,0 +1,36 @@
+button.glider-prev-1, button.glider-prev-2{
+    transform: translateX(15px); 
+  }
+  button.glider-next-1,   button.glider-next-2{
+     transform: translateX(-15px); 
+   }
+   
+  .glider-contain:before{
+    content:"";
+    position: absolute;
+    width:calc(100% / 9);
+    max-width: 75px;
+    height: 100%;
+    top:0;
+    left:0;
+    background-color:transparent;
+    z-index: 1;
+    background-image:linear-gradient(to right , rgba(0, 0, 0, 1),  rgba(0, 0, 0, .5), rgba(0, 0, 0, .2), transparent);
+
+  }
+  .glider-contain:after{
+    content:"";
+    position: absolute;
+    width:calc(100% / 9);
+    max-width:75px;
+    height: 100%;
+    top:0;
+    right:0;
+    background-color:transparent;
+    z-index: 1;
+    background-image:linear-gradient(to left , rgba(0, 0, 0, 1),  rgba(0, 0, 0, .5), rgba(0, 0, 0, .2), transparent);
+    
+  }
+ .horizontal-separator{
+  height:4px;
+ }
