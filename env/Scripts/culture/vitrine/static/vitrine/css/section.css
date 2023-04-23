@@ -1,7 +1,7 @@
-button.glider-prev-1, button.glider-prev-2{
+button.glider-prev, button.glider-prev{
     transform: translateX(15px); 
   }
-  button.glider-next-1,   button.glider-next-2{
+  button.glider-next,   button.glider-next{
      transform: translateX(-15px); 
    }
    

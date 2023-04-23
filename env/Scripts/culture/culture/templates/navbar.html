@@ -1,9 +1,10 @@
 {% load static %}
+{% load i18n %}
 <nav class="navbar navbar-expand-lg border border-secondary container-fluid py-0">
     <div class="container-fluid">
       <a class="navbar-brand d-flex align-items-center" href="{% url 'vitrine:home' %}">
-        <img src="{% static 'img/logo.png' %}" width="60px" height="60spx" alt="Cameroon culture">
-        <h5 class="text-dark fst-italic slogan">Au coeur du Cameroun</h5>
+        <img src="{{company.logo.url}}" width="60px" height="60spx" alt="Cameroon culture">
+        <h5 class="text-dark fst-italic slogan">{{company.slogan}}</h5>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -11,61 +12,94 @@
       <div class="collapse navbar-collapse flex-grow-0 px-3 px-lg-1 " id="navbarSupportedContent"  >
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item position-relative me-1">
-            <a class="nav-link  text-success fw-bolder fst-italic fs-5 {% if active == 1 %}active{% endif %}" aria-current="page" href="{% url 'vitrine:home' %}">Accueil</a>
+            <a class="nav-link  text-success fw-bolder fst-italic fs-5 {% if active == 1 %}active{% endif %}" aria-current="page" href="{% url 'vitrine:home' %}">{% translate 'Accueil' %}</a>
           </li>
           <li class="nav-item position-relative me-1 ">
-            <a class="text-success  nav-link fw-bolder fst-italic fs-5 {% if active == 2 %}active{% endif %}" href="{% url 'vitrine:sector' 'habillement' %}"  role="button" >Arts et culture <i class="fs-6 bi bi-chevron-down"></i></a>
+            <a class="text-success  nav-link fw-bolder fst-italic fs-5 {% if active == 2 %}active{% endif %}" href="{{sectors.0.get_absolute_url}}"  role="button" >{% translate 'Arts et culture' %} <i class="fs-6 bi bi-chevron-down"></i></a>
             <div class="sub-menu">
               <ul class="ps-3 pe-3 py-3 border border-top-0  overflow-hidden">
-                <li><a class="text-decoration-none fst-italic" href="{% url 'vitrine:sector' 'habillement' %}">Habillement</a></li>
-                <li><a class="text-decoration-none fst-italic" href="{% url 'vitrine:sector' 'habillement' %}">Sculture</a></li>
-                <li><a class="text-decoration-none fst-italic" href="{% url 'vitrine:sector' 'habillement' %}">Peinture</a></li>
-                <li><a class="text-decoration-none fst-italic" href="{% url 'vitrine:sector' 'habillement' %}">Chefferies</a></li>
-                <li><a class="text-decoration-none fst-italic" href="{% url 'vitrine:sector' 'habillement' %}">Danses</a></li>
+                {% for sector in sectors %}
+                  <li><a class="text-decoration-none fst-italic" href="{{sector.get_absolute_url}}">{{sector.name}}</a></li>
+                {% endfor %}
               </ul>
             </div>
            
           </li>
           <li class="nav-item position-relative me-1">
-            <a class=" text-success nav-link fw-bolder fst-italic fs-5 {% if active == 3 %}active{% endif %}" href="{% url 'vitrine:region' 'ouest' %}"  role="button" >Régions <i class="fs-6 bi bi-chevron-down"></i> </a>
-            <div class="sub-menu">
-              <ul class="ps-3 pe-3 py-3 border border-top-0  ">
-                <li><a class="text-decoration-none fst-italic" href="{% url 'vitrine:region' 'ouest' %}">Ouest</a></li>
-                <li><a class="text-decoration-none fst-italic" href="{% url 'vitrine:region' 'ouest' %}">Centre</a></li>
-                <li><a class="text-decoration-none fst-italic" href="{% url 'vitrine:region' 'ouest' %}">Littoral</a></li>
-                <li><a class="text-decoration-none fst-italic" href="{% url 'vitrine:region' 'ouest' %}">Sud</a></li>
-                <li><a class="text-decoration-none fst-italic" href="{% url 'vitrine:region' 'ouest' %}">Est</a></li>
-                <li><a class="text-decoration-none fst-italic" href="{% url 'vitrine:region' 'ouest' %}">Sud-Ouest</a></li>
-                <li><a class="text-decoration-none fst-italic" href="{% url 'vitrine:region' 'ouest' %}">Nord-Ouest</a></li>
-                <li><a class="text-decoration-none fst-italic" href="{% url 'vitrine:region' 'ouest' %}">Nord</a></li>
-                <li><a class="text-decoration-none fst-italic" href="{% url 'vitrine:region' 'ouest' %}">Extrême-Nord</a></li>
-                <li><a class="text-decoration-none fst-italic" href="{% url 'vitrine:region' 'ouest' %}">Adamaoua</a></li>
+            <a class=" text-success nav-link fw-bolder fst-italic fs-5 {% if active == 3 %}active{% endif %}" href="{{region.0.get_absolute_url}}"  role="button" >{% translate 'Régions' %} <i class="fs-6 bi bi-chevron-down"></i> </a>
+            <div class="sub-menu" style="min-width:150%">
+              <ul class="ps- pe-3 py-3 border border-top-0  ">
+                {% for region in regions %}
+                <li><a class="text-decoration-none fst-italic" href="{{region.get_absolute_url}}">{{region.name}}</a></li>
+                {% endfor %}
             </ul>
             </div>
             
           </li>
           <li class="nav-item position-relative me-1">
-            <a class="nav-link text-success fw-bolder fst-italic fs-5 {% if active == 4 %}active{% endif %}" href="{% url 'blog:articles' %}">Blog</a>
+            <a class="nav-link text-success fw-bolder fst-italic fs-5 {% if active == 4 %}active{% endif %}" href="{% url 'blog:articles' %}">{% translate 'Blog' %}</a>
           </li>
           <li class="nav-item position-relative me-1">
-            <a class="nav-link text-success fw-bolder fst-italic fs-5 {% if active == 5 %}active{% endif %}" href="#">Espace reservé</a>
+            <a class="nav-link text-success fw-bolder fst-italic fs-5 {% if active == 5 %}active{% endif %}" href="#">{% translate 'Espace reservé' %}</a>
           </li>
           <li class="nav-item position-relative me-1">
-            <a class="nav-link text-success fw-bolder fst-italic fs-5 {% if active == 6 %}active{% endif %}" href="{% url 'vitrine:contact' %}">Contact</a>
+            <a class="nav-link text-success fw-bolder fst-italic fs-5 {% if active == 6 %}active{% endif %}" href="{% url 'vitrine:contact' %}">{% translate 'Contact' %}</a>
           </li>
-          <li class="nav-item position-relative me-2">
-            <a class="nav-link text-success fw-bolder fst-italic fs-5" href="#" role="button">
-              Langues <i class=" bi bi-chevron-down fs-6"></i>
-            </a>
-            <div class="sub-menu">
-              <ul class=" ps-3 pe-3 py-3 border border-top-0  ">
-                <li><a class="text-decoration-none fst-italic" href="#">Français</a></li>
-                <li><a class="text-decoration-none fst-italic" href="#">Anglais</a></li>
-              </ul>
-            </div>
-           
+          <li class="nav-item position-relative me-2 ms-2">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% if LANGUAGE_CODE == "en" %}
+              <a class="nav-link text-success fw-bolder fst-italic fs-6" href="#" role="button">
+                  <span>
+                    <img src="{% static 'img/map_en.svg' %}"  style="width:20px; height: auto;" class="me-1 d-inline" alt="langue anglaise">
+                  </span>
+                 English <i class=" bi bi-chevron-down fs-6"></i>
+                
+              </a>
+              <div class="sub-menu">
+                <ul class=" ps-3 pe-3 py-3 border border-top-0 ">
+                  <li>
+                    <form action="{% url 'set_language' %}" method="post">
+                      {% csrf_token %}
+                      <input type="hidden" name="language" value="fr">
+                      <button type="submit" class="fst-italic d-flex btn text-primary btn-transparent p-0">
+                        <span>
+                          <img src="{% static 'img/map_fr.svg' %}"  style="width:20px; height: auto;" class="me-1 d-inline" alt="langue française">
+                        </span>
+                        Français
+                      </button>
+                    </form>
+                  </li>
+                </ul>
+              </div>
+            {% else %}
+              <a class="nav-link text-success fw-bolder fst-italic fs-6" href="#" role="button">
+                <span>
+                  <img src="{% static 'img/map_fr.svg' %}"  style="width:20px; height: auto;" class="me-1 d-inline" alt="langue française">
+                </span>
+                Français <i class=" bi bi-chevron-down fs-6"></i>
+              
+              </a>
+              <div class="sub-menu">
+                <ul class=" ps-3 pe-3 py-3 border border-top-0 ">
+                  <li>
+                    <form action="{% url 'set_language' %}" method="post">
+                      {% csrf_token %}
+                      <input type="hidden" name="language" value="en">
+                      <button type="submit" class="fst-italic d-flex btn text-primary btn-transparent p-0">
+                        <span>
+                          <img src="{% static 'img/map_en.svg' %}"  style="width:20px; height: auto;" class="me-1 d-inline" alt="langue anglaise">
+                        </span>
+                        English
+                      </button>
+                    </form>
+                   </li>
+               </ul>
+             </div>
+            {% endif %}
+            
           </li>
         </ul>
       </div>
     </div>
   </nav>
+

@@ -28,8 +28,8 @@ nav ul li.nav-item a.nav-link:after, .footer div a:after{
   div.sub-menu ul {
     list-style-type: none;
   }
-  nav .nav-item >div.sub-menu ul li a:hover{
-        color:var(--bs-success)
+  nav .nav-item >div.sub-menu ul li a:hover,   nav .nav-item >div.sub-menu ul li button:hover{
+        color:var(--bs-success)!important;
   }
   nav .nav-item >div.sub-menu {
     position: absolute;
@@ -119,4 +119,46 @@ footer ul a:hover, footer  a:hover i{
         display: none;
     }
     
+}
+
+.img{
+  position:relative;
+  display: inline-block;
+  overflow:hidden;
+}
+.img span{
+  position:absolute;
+  bottom:0;
+  right:5px;
+  color:var(--bs-light);
+  font-style:italic;
+  text-shadow: 2px 2px 5px var(--bs-dark);
+  font-size:.8rem;
+  word-wrap:anywhere;
+}
+
+
+.alert-container > div {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 100;
+  animation-name: slideDown;
+  animation-duration: .5s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.86,0,.07,1);
+}
+
+@keyframes slideDown {
+  from{
+    top:10px;
+  }
+  to{
+    top:50px;
+  }
+}
+
+form.newsletter button{
+  width:190px;
 }

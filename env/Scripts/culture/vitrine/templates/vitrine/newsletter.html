@@ -1,23 +1,32 @@
 
 {% load static %}
+{% load i18n %}
 
-<div class="px-4 row my-5">
+<div class="px-4 row my-5" id="newsletter">
     <div class="col-0 col-md-1 col-lg-2 col-xl-3"></div>
     <div class="col-12 col-md-10 col-lg-8 col-xl-6 bg-light shadow rounded p-2 p-md-5">
       <div class="d-flex justify-content-center">
         <img src="{% static 'img/logo_white.png' %}"  width="100px", height="100px" alt="Au coeur du Cameroun">
       </div>
       <div class="fst-italic text-center">
-        <h2 class="text-primary">Abonnez vous à notre</h2>
-        <h2 class="text-success">newsletter</h2>
+        {% blocktranslate %}
+          <h2 class="text-primary">Abonnez vous à notre</h2>
+          <h2 class="text-success">newsletter</h2>
+        {% endblocktranslate %}
       </div>
       <p class="fs-5">
-        Restez à jour  en recevant régulièrement par email des nouveautés et des points intéressants de la culture Camerounaise.
+        {% translate ' Restez à jour  en recevant régulièrement par email des nouveautés et des points intéressants de la culture Camerounaise.' %}
+          
+        
       </p>
-      <form action="" class="fs-5">
-        <label for="email" class="form-label text-success fst-italic">Adresse mail</label>
-        <input type="email" class="form-control" required  placeholder="exemple@gmail.com">
-        <button type="submit" class="btn btn-warning fst-italic  border-secondary fw-bolder mx-auto mt-3 d-block">S'abonner</button>
+      <form action="{% url 'vitrine:newsletter' %}" class="fs-5 newsletter" method="post" >
+        <label for="email" class="form-label text-success fst-italic">{% translate ' Adresse mail' %} </label>
+        {% csrf_token %}
+        <input type="email" name="email" class="form-control" required  placeholder="exemple@gmail.com">
+        <div class="info">
+          
+        </div>
+        <button type="submit" class="btn btn-warning fst-italic  border-secondary fw-bolder mx-auto mt-3 d-block">{% translate  "S'abonner" %} </button>
       </form>
     </div>
     <div class="col-0 col-md-1 col-lg-2 col-xl-3"></div>

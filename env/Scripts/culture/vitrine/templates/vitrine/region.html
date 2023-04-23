@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
+
 
 
     {% block title %} {{region.name}} {%endblock title%}
@@ -10,100 +12,165 @@
     {% block content %}
     {% include "navbar.html" with active=3 %}
     <div class="mx-2 mx-md-5 fst-italic">
-        <h1 class="text-primary ">Région de</h1>
+        <h1 class="text-primary ">{% translate 'Région de' %}</h1>
         <div class="d-flex align-items-center">
             <span class="pretty-dash bg-primary"></span>
-            <h1 class="text-success">Ouest Cameroun</h1>
+            <h1 class="text-success">{{region.name}} {% translate 'Cameroun' %}</h1>
         </div>
       </div>
       <div class="container my-5">
-        <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis quasi distinctio ducimus cupiditate laudantium officia animi. 
-            Expedita obcaecati accusantium repellendus ratione nam quas illo sed et in. Quibusdam, reiciendis ipsa!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis quasi distinctio ducimus cupiditate laudantium officia animi. 
-            Expedita obcaecati accusantium repellendus ratione nam quas illo sed et in. Quibusdam, reiciendis ipsa!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis quasi distinctio ducimus cupiditate laudantium officia animi. 
-            Expedita obcaecati accusantium repellendus ratione nam quas illo sed et in. Quibusdam, reiciendis ipsa!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis quasi distinctio ducimus cupiditate laudantium officia animi. 
-            Expedita obcaecati accusantium repellendus ratione nam quas illo sed et in. Quibusdam, reiciendis ipsa!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis quasi distinctio ducimus cupiditate laudantium officia animi. 
-            Expedita obcaecati accusantium repellendus ratione nam quas illo sed et in. Quibusdam, reiciendis ipsa!</p>
-    
-      </div>
-      <div class="container mb-5">
-        <h2 class="text-primary  fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing </h2>
-        <div class="d-flex justify-content-center pair-picture">
-            <img src="{% static 'img/chifferie1.jpg' %}" alt="Chefferie ouest Cameroun" class="img-fluid" >
-            <img src="{% static 'img/chefferie2 .jpg' %}" alt="Chefferie ouest Cameroun0" class="img-fluid" >
-        </div>
-        <p class="text-secondary pt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis quasi distinctio ducimus cupiditate laudantium officia animi. 
-            Expedita obcaecati accusantium repellendus ratione nam quas illo sed et in. Quibusdam, reiciendis ipsa!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis quasi distinctio ducimus cupiditate laudantium officia animi. 
-            Expedita obcaecati accusantium repellendus ratione nam quas illo sed et in. Quibusdam, reiciendis ipsa!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis quasi distinctio ducimus cupiditate laudantium officia animi. 
-            Expedita obcaecati accusantium repellendus ratione nam quas illo sed et in. Quibusdam, reiciendis ipsa!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis quasi distinctio ducimus cupiditate laudantium officia animi. 
-            Expedita obcaecati accusantium repellendus ratione nam quas illo sed et in. Quibusdam, reiciendis ipsa!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis quasi distinctio ducimus cupiditate laudantium officia animi. 
-            Expedita obcaecati accusantium repellendus ratione nam quas illo sed et in. Quibusdam, reiciendis ipsa!</p>
-    
-
-      </div>
-      <div class="container my-5">
-        <div class="line-separator bg-success"></div>
-     </div>
-     <div class="my-5">
-        <h2 class="text-primary container fst-italic">Lorem ipsum dolor sit amet consectetur.</h2>
-        <div class="glider-contain position-relative">
-          <div class="glider overflow-hidden">
-            <div class="me-1 me-sm-2 me-md-4">
-              <img src="{% static 'img/culture_2.jpg' %}" class=""  alt="culture camerounaise ouest">
-            </div>
-            <div class="me-1 me-sm-2 me-md-4">
-              <img src="{% static 'img/culture_3.jpg' %}" class=""  alt="culture camerounaise ouest">
-            </div> 
-            <div class="me-1 me-sm-2 me-md-4">
-              <img src="{% static 'img/culture_1.png' %}" class=""  alt="culture camerounaise ouest">
-            </div>
-            <div class="me-1 me-sm-2 me-md-4">
-              <img src="{% static 'img/culture_4.jpg' %}" class=""  alt="culture camerounaise ouest">
-            </div> 
-            
-            <div class="me-1 me-sm-2 me-md-4">
-              <img src="{% static 'img/culture_2.jpg' %}" class=""  alt="culture camerounaise ouest">
-            </div>
-            <div class="me-1 me-sm-2 me-md-4">
-              <img src="{% static 'img/culture_3.jpg' %}" class=""  alt="culture camerounaise ouest">
-            </div>
-            <div class="me-1 me-sm-2 me-md-4">
-              <img src="{% static 'img/culture_1.png' %}" class=""  alt="culture camerounaise ouest">
-            </div> 
-          </div>
-          <button aria-label="Previous" class="glider-prev"><i class="bi bi-chevron-left text-light fs-1"></i></button>
-          <button aria-label="Next" class="glider-next"><i class="bi bi-chevron-right fs-1 text-light"  ></i></button>
-          <div role="tablist" class="dots"></div>
-        </div>
-        <p class="fs-5 text-secondary my-5 container">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
-          quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
-           sapiente sint placeat distinctio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
-           quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
-            sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
-          quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
-           sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
-           quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
-            sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
-            quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
-             sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
-             quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
-              sapiente sint placeat distinctio.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eius at perferendis ut, nam reiciendis, 
-              quibusdam aliquid natus veniam dolor iure odio corrupti molestias aspernatur dignissimos
-               sapiente sint placeat distinctio.
+        <p class="text-secondary fs-5">
+          {{region.description}}
         </p>
       </div>
+
+        {% for content in region.content_set.all %}
+          {% if content.pattern_content_others_pages.id == "carousel_top-text_bottom" %}
+            <div class="my-5">
+              <h2 class=" text-primary fst-italic container">{{content.title}}</h2>
+              <div class="glider-contain position-relative">
+                <div class="glider overflow-hidden" id="glider-{{forloop.counter}}">
+                  {% for media in content.mediacontent_set.all %}
+                    <div class="me-1 me-sm-2 me-md-4">
+                      <div class="img">
+                        <img src="{{media.image.url}}" class=""  alt="{{media.image.default_alt_text}}">
+                        <span>@:{{media.image.author}}</span>
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+                <button aria-label="Previous" class="glider-prev glider-prev-{{forloop.counter}}"><i class="bi bi-chevron-left text-light fs-1"></i></button>
+                <button aria-label="Next" class="glider-next glider-next-{{forloop.counter}}"><i class="bi bi-chevron-right fs-1 text-light"  ></i></button>
+                <div role="tablist" class="dots"></div>
+              </div>
+              <p class="fs-5 container text-secondary my-5">
+              {{content.body|linebreaksbr}}
+              </p>
+            </div>
+            {% elif content.pattern_content_others_pages.id == "images_top-text_bottom" %}
+              <div class="container my-5">
+                <h2 class="text-primary fst-italic">{{content.title}} </h2>
+                <div class="text-center mx-1">
+                  {% for media in content.mediacontent_set.all %}
+                    <div class="img">
+                      <img src="{{media.image.url}}" class="img-fluid" alt="{{media.image.default_alt_text}}">
+                      <span>@:{{media.image.author}}</span>
+                    </div>
+                  {% endfor %}
+                </div>
+                <p class="fs-5 text-secondary my-5">
+                  {{content.body|linebreaksbr}}
+                </p>
+              
+            </div>
+            {% elif content.pattern_content_others_pages.id == "images_right-text_left" %}
+              <div class="container my-5">
+                <h2 class="text-primary fst-italic">{{content.title}} </h2>
+                <div class="row justify-content-between">
+                  <div class="col-12 col-md-6 col-lg-8 order-2 order-md-1">
+                    <p class="fs-5 text-secondary my-2 my-md-5">
+                      {{content.body|linebreaksbr}}
+                    </p>
+                  </div>
+                  <div class="col-12 col-md-6 order-1  col-lg-4 order-md-2 pt-5 text-center">
+                    {% for media in content.mediacontent_set.all %}
+                      <div class="img">
+                        <img src="{{media.image.url}}" class="img-fluid" alt="{{media.image.default_alt_text}}" style="max-height: 500px;">
+                        <span>@:{{media.image.author}}</span>
+                      </div>
+                    {% endfor %}
+                  </div>
+                </div>
+                
+              </div>
+            {% elif content.pattern_content_others_pages.id == "images_left-text_right" %}
+              <div class="container my-5">
+                <h2 class="text-primary fst-italic">{{content.title}} </h2>
+                <div class="row justify-content-between">
+                  <div class="col-12 col-md-6  col-lg-4  pt-5 text-center">
+                    {% for media in content.mediacontent_set.all %}
+                      <div class="img">
+                        <img src="{{media.image.url}}" class="img-fluid" alt="{{media.image.default_alt_text}}" style="max-height: 500px;">
+                        <span>@:{{media.image.author}}</span>
+                      </div>
+                    {% endfor %}
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-8 ">
+                    <p class="fs-5 text-secondary my-2 my-md-5">
+                      {{content.body|linebreaksbr}}
+                    </p>
+                  </div>
+                
+                </div>
+                
+              </div>
+            {% elif content.pattern_content_others_pages.id == "text_top-image_in_frame" %}
+              <div class="container my-5">
+                <div class="mt-5 mx-3 d-sm-flex d-inline-block mb-3">
+                  <div class="d-inline">
+                    <div class="point bg-primary d-inline-block me-1  me-sm-4 mt-4" >
+                    </div>
+                  </div>
+                  <h1 class="text-primary d-inline fst-italic">{{content.title}}</h1>
+                </div>
+                <div class="row">
+                  <div class="">
+                    <p class="text-secondary fs-5">{{content.body|linebreaksbr}}</p>
+                  </div>
+                  <div class="d-flex justify-content-center align-items-center">
+                    <div class="col-0 col-md-2"></div>
+                    <div class="col-12 col-md-7 d-flex justify-content-center picture-frame">
+                      {% with medias=content.mediacontent_set.all %}
+                        <div class="">
+                          <div class="d-flex justify-content-end">
+                            <div class="img">
+                              <img src="{{medias.0.image.url}}" class="img-fluid d-block mt-5"  alt="{{medias.0.image.default_alt_text}}">
+                              <span>@:{{medias.0.image.author}}</span>
+                            </div>                      
+                          </div>
+                          <div class="d-flex justify-content-end">
+                            <div class="img">
+                              <img src="{{medias.1.image.url}}"  class="img-fluid d-block"  alt="{{medias.1.image.default_alt_text}}">
+                              <span>@:{{medias.1.image.author}}</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="">
+                          <div class="d-flex justify-content-start">
+                            <div class="img">
+                              <img src="{{medias.2.image.url}}"   class="img-fluid d-block"  alt="{{medias.2.image.default_alt_text}}">
+                              <span>@:{{medias.2.image.author}}</span>
+                            </div>
+                          </div>
+                          <div class="d-flex justify-content-start">
+                            <div class="img">
+                              <img src="{{medias.3.image.url}}"  class="img-fluid d-block"alt="{{medias.3.image.default_alt_text}}">
+                              <span>@:{{medias.3.image.author}}</span>
+                            </div>
+                          </div>
+                        </div>
+                      {% endwith %}
+                    </div>
+                    <div class="col-0 col-md-3"></div>
+                
+                  </div>
+                </div>
+              
+              </div>
+        
+          {% endif %}
+        {% if not  forloop.last %}
+          <div class="container my-5">
+            <div class="line-separator bg-success"></div>
+          </div>
+          {% endif %}
+      {% endfor %}
+
         {% include "vitrine/newsletter.html" %}
     {% endblock content %}
   
     {% block js %}
     <script src="{% static 'js/glider.min.js' %}"></script>
     <script src="{% static 'vitrine/js/region.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vitrine/js/newsletter.js' %}"></script>
     {% endblock js %}

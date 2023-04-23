@@ -31,13 +31,13 @@
 .sections > div{
     cursor: pointer;
 }
-.sections > div:hover{
+.sections > div:hover, .sections > div.active{
     color:var(--bs-primary)
 }
-.search input{
+form.search input{
     max-width: 800px;
 }
-.search button{
+form.search button{
     position: absolute;
     top:-12px;
     right:25px;
@@ -47,7 +47,7 @@
 }
 
 .articles img{
-    max-height:200px
+    max-height:200px;
 }
 .articles >div{
     border-top-style: dashed !important;
@@ -69,3 +69,4 @@
         -webkit-box-orient:vertical;
     }
 }
+

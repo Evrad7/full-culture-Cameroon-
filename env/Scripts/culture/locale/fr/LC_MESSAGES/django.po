@@ -1,0 +1,403 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-23 10:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\blog\models.py:12
+msgid "image bannière"
+msgstr ""
+
+#: .\blog\models.py:14
+msgid "image de présentation"
+msgstr ""
+
+#: .\blog\models.py:15 .\blog\models.py:16 .\blog\models.py:63
+#: .\vitrine\models.py:138
+msgid "titre"
+msgstr ""
+
+#: .\blog\models.py:18
+msgid "publié"
+msgstr ""
+
+#: .\blog\models.py:20
+msgid "date de création"
+msgstr ""
+
+#: .\blog\models.py:22
+msgid "date de publication"
+msgstr ""
+
+#: .\blog\models.py:24
+msgid "date de la derniere modification"
+msgstr ""
+
+#: .\blog\models.py:25
+msgid "contenu de l'article"
+msgstr ""
+
+#: .\blog\models.py:27 .\vitrine\models.py:141
+msgid "secteur"
+msgstr ""
+
+#: .\blog\models.py:42 .\blog\models.py:53 .\blog\models.py:65
+msgid "article"
+msgstr ""
+
+#: .\blog\models.py:43 .\blog\templates\blog\articles.html:6
+msgid "articles"
+msgstr ""
+
+#: .\blog\models.py:48
+msgid "auteur"
+msgstr ""
+
+#: .\blog\models.py:51 .\vitrine\models.py:101
+msgid "message"
+msgstr ""
+
+#: .\blog\models.py:57
+msgid "commentaire"
+msgstr ""
+
+#: .\blog\models.py:58
+msgid "commentaires"
+msgstr ""
+
+#: .\blog\templates\blog\article.html:38
+msgid "S'abonner à la newsletter"
+msgstr ""
+
+#: .\blog\templates\blog\article.html:41 .\blog\templates\blog\articles.html:41
+msgid "Rechercher dans les articles"
+msgstr ""
+
+#: .\blog\templates\blog\article.html:55
+msgid "Les commentaires"
+msgstr ""
+
+#: .\blog\templates\blog\article.html:82
+msgid "Ceci pourrait vous interessez"
+msgstr ""
+
+#: .\blog\templates\blog\article.html:99
+msgid "Lire l"
+msgstr ""
+
+#: .\blog\templates\blog\articles.html:19
+msgid "Les articles"
+msgstr ""
+
+#: .\blog\templates\blog\articles.html:22
+msgid "Des plus récents"
+msgstr ""
+
+#: .\blog\templates\blog\articles.html:29
+msgid "Tout"
+msgstr ""
+
+#: .\blog\templates\blog\articles.html:67
+msgid "Lire l'article"
+msgstr ""
+
+#: .\blog\templates\blog\articles.html:73
+msgid "Aucun article existant ne correspond à votre recherche"
+msgstr ""
+
+#: .\blog\templates\blog\articles.html:83
+msgid "Précédent"
+msgstr ""
+
+#: .\blog\templates\blog\articles.html:100
+msgid "Suivant"
+msgstr ""
+
+#: .\blog\templates\blog\comment_form.html:6
+msgid " Nom"
+msgstr ""
+
+#: .\blog\templates\blog\comment_form.html:15
+msgid "Laissez vos impressions"
+msgstr ""
+
+#: .\blog\templates\blog\comment_form.html:22
+#: .\vitrine\templates\vitrine\contact.html:35
+msgid "Envoyer"
+msgstr ""
+
+#: .\culture\settings.py:133
+msgid "English"
+msgstr ""
+
+#: .\culture\settings.py:134
+msgid "French"
+msgstr ""
+
+#: .\culture\templates\base.html:40 .\culture\templates\navbar.html:15
+msgid "Accueil"
+msgstr ""
+
+#: .\culture\templates\base.html:43 .\culture\templates\navbar.html:18
+msgid "Arts et culture"
+msgstr ""
+
+#: .\culture\templates\base.html:51 .\culture\templates\navbar.html:29
+msgid "Régions"
+msgstr ""
+
+#: .\culture\templates\base.html:59 .\culture\templates\navbar.html:40
+msgid "Blog"
+msgstr ""
+
+#: .\culture\templates\base.html:62 .\culture\templates\navbar.html:43
+msgid "Espace reservé"
+msgstr ""
+
+#: .\culture\templates\base.html:65 .\culture\templates\navbar.html:46
+#: .\vitrine\templates\vitrine\contact.html:6
+msgid "Contact"
+msgstr ""
+
+#: .\culture\templates\base.html:83
+msgid "Qui sommes nous ??"
+msgstr ""
+
+#: .\vitrine\models.py:12 .\vitrine\models.py:36 .\vitrine\models.py:61
+#: .\vitrine\models.py:92 .\vitrine\models.py:166
+msgid "description"
+msgstr ""
+
+#: .\vitrine\models.py:34 .\vitrine\models.py:88 .\vitrine\models.py:121
+#: .\vitrine\models.py:164
+msgid "nom"
+msgstr ""
+
+#: .\vitrine\models.py:51
+msgid "région"
+msgstr ""
+
+#: .\vitrine\models.py:52
+msgid "régions"
+msgstr ""
+
+#: .\vitrine\models.py:58
+msgid "logo"
+msgstr ""
+
+#: .\vitrine\models.py:59
+msgid "name"
+msgstr ""
+
+#: .\vitrine\models.py:62
+msgid "adresse email"
+msgstr ""
+
+#: .\vitrine\models.py:64
+msgid "téléphone 1"
+msgstr ""
+
+#: .\vitrine\models.py:66
+msgid "téléphone 2"
+msgstr ""
+
+#: .\vitrine\models.py:67
+msgid "adresse"
+msgstr ""
+
+#: .\vitrine\models.py:69
+msgid "slogan"
+msgstr ""
+
+#: .\vitrine\models.py:75 .\vitrine\models.py:76
+msgid "companie"
+msgstr ""
+
+#: .\vitrine\models.py:89
+msgid "email"
+msgstr ""
+
+#: .\vitrine\models.py:90
+msgid "sujet"
+msgstr ""
+
+#: .\vitrine\models.py:102
+msgid "messages"
+msgstr ""
+
+#: .\vitrine\models.py:110
+msgid "date d'ajout"
+msgstr ""
+
+#: .\vitrine\models.py:116
+msgid "contact pour la newsletter"
+msgstr ""
+
+#: .\vitrine\models.py:117
+msgid "contacts pour la newsletters"
+msgstr ""
+
+#: .\vitrine\models.py:122
+msgid "lien"
+msgstr ""
+
+#: .\vitrine\models.py:124
+msgid "classe css de l'icon"
+msgstr ""
+
+#: .\vitrine\models.py:132
+msgid "reseau social"
+msgstr ""
+
+#: .\vitrine\models.py:133
+msgid "reseaux sociaux"
+msgstr ""
+
+#: .\vitrine\models.py:139
+msgid "corps"
+msgstr ""
+
+#: .\vitrine\models.py:143
+msgid "region"
+msgstr ""
+
+#: .\vitrine\models.py:145
+msgid "Affiché à la page d'accueil"
+msgstr ""
+
+#: .\vitrine\models.py:146
+msgid "position d'affichage dans le site"
+msgstr ""
+
+#: .\vitrine\models.py:147
+msgid ""
+"Plus ce nombre est petit plus le contenu s'affichera en haut avant les autres"
+msgstr ""
+
+#: .\vitrine\models.py:149
+msgid "modèle d'affichage dans la page d'accueil"
+msgstr ""
+
+#: .\vitrine\models.py:149
+msgid "modèle d'affichage du contenu dans la page d'accueil"
+msgstr ""
+
+#: .\vitrine\models.py:151
+msgid "modèle d'affichage dans d'autres pages"
+msgstr ""
+
+#: .\vitrine\models.py:151
+msgid ""
+"modèle d'affichage du contenu dans des pages autres que la page d'accueil"
+msgstr ""
+
+#: .\vitrine\models.py:157
+msgid "contenu statique"
+msgstr ""
+
+#: .\vitrine\models.py:158
+msgid "contenus statiques"
+msgstr ""
+
+#: .\vitrine\models.py:172
+msgid "modele d'affichage des contenus statiques"
+msgstr ""
+
+#: .\vitrine\models.py:173
+msgid "modeles d'affichage des contenus statiques"
+msgstr ""
+
+#: .\vitrine\models.py:178
+msgid "contenu"
+msgstr ""
+
+#: .\vitrine\models.py:180
+msgid "image"
+msgstr ""
+
+#: .\vitrine\models.py:183
+msgid "media du contenu"
+msgstr ""
+
+#: .\vitrine\models.py:184
+msgid "medias du contenu"
+msgstr ""
+
+#: .\vitrine\templates\vitrine\contact.html:19
+msgid "Contactez nous via le formulaire"
+msgstr ""
+
+#: .\vitrine\templates\vitrine\home.html:6
+msgid "Accueil "
+msgstr ""
+
+#: .\vitrine\templates\vitrine\home.html:20
+msgid "Découvrez toute la richesse de la culture <br> camerounaise"
+msgstr ""
+
+#: .\vitrine\templates\vitrine\home.html:45
+#: .\vitrine\templates\vitrine\home.html:73
+#: .\vitrine\templates\vitrine\home.html:93
+#: .\vitrine\templates\vitrine\home.html:162
+#: .\vitrine\templates\vitrine\home.html:188
+msgid "En savoir plus"
+msgstr ""
+
+#: .\vitrine\templates\vitrine\home.html:204
+msgid "Les articles les plus consultés"
+msgstr ""
+
+#: .\vitrine\templates\vitrine\home.html:231
+#: .\vitrine\templates\vitrine\home.html:249
+#: .\vitrine\templates\vitrine\home.html:289
+#: .\vitrine\templates\vitrine\home.html:306
+msgid "Lire plus ..."
+msgstr ""
+
+#: .\vitrine\templates\vitrine\home.html:316
+msgid "Plus d'articles"
+msgstr ""
+
+#: .\vitrine\templates\vitrine\newsletter.html:12
+msgid ""
+"\n"
+"          <h2 class=\"text-primary\">Abonnez vous à notre</h2>\n"
+"          <h2 class=\"text-success\">newsletter</h2>\n"
+"        "
+msgstr ""
+
+#: .\vitrine\templates\vitrine\newsletter.html:18
+msgid ""
+" Restez à jour  en recevant régulièrement par email des nouveautés et des "
+"points intéressants de la culture Camerounaise."
+msgstr ""
+
+#: .\vitrine\templates\vitrine\newsletter.html:23
+msgid " Adresse mail"
+msgstr ""
+
+#: .\vitrine\templates\vitrine\newsletter.html:29
+msgid "S'abonner"
+msgstr ""
+
+#: .\vitrine\templates\vitrine\region.html:15
+msgid "Région de"
+msgstr ""
+
+#: .\vitrine\templates\vitrine\region.html:18
+msgid "Cameroun"
+msgstr ""

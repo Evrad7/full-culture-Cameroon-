@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function(){
-    new Glider(document.querySelector("#glider-1"), {
+    document.querySelectorAll(".glider").forEach(function(elt){
+        console.log(elt.id)
+        index=elt.id.split("-")[1]
+             new Glider(document.querySelector("#"+elt.id), {
         slidesToShow:3,
         scrollLock:true,
         scrollLockDelay:1000,
@@ -9,8 +12,8 @@ document.addEventListener("DOMContentLoaded", function(){
         scrollPropagate:true,
         resizeLock:false,
         arrows: {
-            prev: '.glider-prev-1',
-            next: '.glider-next-1'
+            prev: '.glider-prev-'+index,
+            next: '.glider-next-'+index,
           },
           responsive:[
             {
@@ -24,26 +27,6 @@ document.addEventListener("DOMContentLoaded", function(){
        
     })
 
-    new Glider(document.querySelector("#glider-2"), {
-        slidesToShow:5,
-        scrollLock:true,
-        scrollLockDelay:1000,
-        draggable:true,
-        dragVelocity:.75,
-        dragVelocity:1,
-        arrows: {
-            prev: '.glider-prev-2',
-            next: '.glider-next-2'
-          },
-          responsive:[
-            {
-                breakpoint:992,
-                settings:{
-                    slidesToShow:4
-                }
-            }
-          ]
-      
-    
-    })
+})
+
 })

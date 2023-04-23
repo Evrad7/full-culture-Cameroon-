@@ -1,5 +1,7 @@
 {% load static %}
+{% load i18n %}
 {% load compress %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,7 +21,11 @@
 
     
     <body class="body">
+          <div class="alert-container">
+            
+          </div>
           {% block navbar %}{% endblock navbar %}
+    
           {% block content %}
 
           {% endblock content %}
@@ -31,41 +37,32 @@
                 <div class="col-12 col-sm-4 text-start d-flex justify-content-center mt-3 mt-sm-0 order-3 order-sm-1">
                   <ul class="d-flex d-sm-block flex-wrap justify-content-evenly">
                     <li class="nav-item">
-                      <a class="nav-link active text-light fw-bolder fst-italic fs-5" aria-current="page" href="#">Accueil</a>
+                      <a class="nav-link active text-light fw-bolder fst-italic fs-5" aria-current="page" href="#">{% translate 'Accueil' %}</a>
                     </li>
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle text-light fw-bolder fst-italic fs-5" href="#"  role="button" data-bs-toggle="dropdown" aria-expanded="false">Arts et culture</a>
+                      <a class="nav-link dropdown-toggle text-light fw-bolder fst-italic fs-5" href="{{sectors.0.get_absolute_url}}"  role="button" data-bs-toggle="dropdown" aria-expanded="false">{% translate 'Arts et culture' %}</a>
                       <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Habillement</a></li>
-                          <li><a class="dropdown-item" href="#">Sculture</a></li>
-                          <li><a class="dropdown-item" href="#">Peinture</a></li>
-                          <li><a class="dropdown-item" href="#">Chefferies</a></li>
-                          <li><a class="dropdown-item" href="#">Danses</a></li>
+                        {% for sector in sectors %}
+                          <li><a class="dropdown-item" href="{{sector.get_absolute_url}}">{{sector.name}}</a></li>
+                        {% endfor %}
                       </ul>
                     </li>
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle text-light fw-bolder fst-italic fs-5" href="#"  role="button" data-bs-toggle="dropdown" aria-expanded="false">Régions</a>
+                      <a class="nav-link dropdown-toggle text-light fw-bolder fst-italic fs-5" href="{{regions.0.get_absolute_url}}"  role="button" data-bs-toggle="dropdown" aria-expanded="false">{% translate 'Régions' %}</a>
                       <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Ouest</a></li>
-                          <li><a class="dropdown-item" href="#">Centre</a></li>
-                          <li><a class="dropdown-item" href="#">Littoral</a></li>
-                          <li><a class="dropdown-item" href="#">Sud</a></li>
-                          <li><a class="dropdown-item" href="#">Est</a></li>
-                          <li><a class="dropdown-item" href="#">Sud-Ouest</a></li>
-                          <li><a class="dropdown-item" href="#">Nord-Ouest</a></li>
-                          <li><a class="dropdown-item" href="#">Nord</a></li>
-                          <li><a class="dropdown-item" href="#">Extrême-Nord</a></li>
-                          <li><a class="dropdown-item" href="#">Adamaoua</a></li>
+                        {% for region in regions %}
+                        <li><a class="dropdown-item" href="{{region.get_absolute_url}}">{{region.name}}</a></li>
+                        {% endfor %}
                       </ul>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link text-light fw-bolder fst-italic fs-5" href="#">Blog</a>
+                      <a class="nav-link text-light fw-bolder fst-italic fs-5" href="#">{% translate 'Blog' %}</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link text-light fw-bolder fst-italic fs-5" href="#">Espace reservé</a>
+                      <a class="nav-link text-light fw-bolder fst-italic fs-5" href="#">{% translate 'Espace reservé' %}</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link text-light fw-bolder fst-italic fs-5" href="#">Contact</a>
+                      <a class="nav-link text-light fw-bolder fst-italic fs-5" href="#">{% translate 'Contact' %}</a>
                     </li>
                   </ul>
                   
@@ -73,10 +70,9 @@
                 <div class="col-12 col-sm-4 mb-5 d-flex justify-content-center order-1 order-sm-2">
                   <div>
                     <div class="mb-1 mb-sm-5">
-                      <a href="" class="link-light"><i class="bi bi-facebook fs-4 me-2"></i></a>
-                      <a href="" class="link-light"><i class="bi bi-twitter fs-4 me-2"></i></a>
-                      <a href="" class="link-light"><i class="bi bi-instagram fs-4 me-2"></i></a>
-                      <a href="" class="link-light"><i class="bi bi-pinterest fs-4 me-2"></i></a>
+                      {% for link in company.links.all %}
+                        <a href="{{link.link}}" class="link-light"><i class="bi {{link.icon_class}} fs-4 me-2"></i></a>
+                      {% endfor %}
                     </div>
                     <div>
                       <span class="text-light fst-italic">Copyright@Evrad7</span>
@@ -84,9 +80,8 @@
                   </div>
                 </div>
                 <div  class="col-12 col-sm-4 text-light order-2 order-sm-3 text-center text-sm-start">
-                  <h3>Qui sommes nous</h3>
-                  <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum libero autem illo consectetur architecto sint obcaecati 
-                    quae blanditiis aperiam? Ad voluptates dolor id accusamus amet quae a praesentium consectetur enim?</div>
+                  <h3>{% translate 'Qui sommes nous ??' %}</h3>
+                  <div>{{company.description}}</div>
                 </div>
               </div>
 

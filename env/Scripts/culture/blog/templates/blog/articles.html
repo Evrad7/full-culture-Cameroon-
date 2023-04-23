@@ -1,143 +1,78 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 
-    {% block title %} {{region.name}} {%endblock title%}
+    {% block title %} {% translate 'articles' %} {%endblock title%}
     {% block css %}
       <link rel="stylesheet" type="text/css" href="{% static 'blog/css/articles.css' %}">
     {% endblock css %}
     {% block content %}
     {% include "navbar.html" with active=4 %}
 
+    
+    
+    
+
     <div class="row justify-content-center">
         <div class=" col-12 col-lg-10  col-xl-9 mx-2 mx-md-5 fst-italic">
-          <h1 class="text-primary ">Les articles</h1>
+          <h1 class="text-primary ">{% translate 'Les articles' %}</h1>
           <div class="d-flex align-items-center">
               <span class="pretty-dash bg-primary"></span>
-              <h1 class="text-success">Des plus récents</h1>
+              <h1 class="text-success"> {% translate 'Des plus récents' %}</h1>
           </div>
       </div>
     
       </div>
-        <div class="d-flex mt-3 flex-wrap mx-md-3 mx-2 sections justify-content-center justify-content-sm-start ">
-          <div class="me-3 me-sm-4 me-md-4">
-            Habillement
+        <div class="d-flex mt-3 flex-wrap mx-md-3 mx-2 sections justify-content-center justify-content-sm-start">
+          <div slug="all" class="me-3 me-sm-4 me-md-4 {% if  request.GET.sector == 'all' or request.GET.sector is None  %}active{% endif %}">
+            {% translate 'Tout' %}
           </div>
-          <div class="me-3 me-sm-4 me-md-4 ">
-            Peinture
-          </div> 
-          <div class="me-3 me-sm-4 me-md-4">
-            Art cullinaire
-          </div>
-          <div class="me-3 me-sm-4 me-md-4">
-            Sculture
-          </div> 
-          
-          <div class="me-3 me-sm-4 me-md-4">
-            Musique
-          </div>
-          <div class="me-3 me-sm-4 me-md-4">
-            Chefferies
-          </div>
-          <div class="me-3 me-sm-4 me-md-4">
-            Rites et croyances
-          </div> 
-        <div role="tablist" class="dots"></div>
+          {% for sector in sectors %}
+            <div slug="{{sector.slug}}" class="me-3 me-sm-4 me-md-4 {% if sector.slug == request.GET.sector %} active {% endif %}">
+              {{sector.name}}
+            </div>
+          {% endfor %}
       </div>
       <div class="container my-5">
-        <form action="" class="row justify-content-end">
-            <div class="search position-relative  col-12 col-lg-6">
-                <input type="search" placeholder="Rechercher dans les articles" class="form-control border-top-0 border-start-0 border-end-0 rounded-top ">
+        <form action="" method="get" class="row justify-content-end search" >
+            <div class="position-relative  col-12 col-lg-6">
+                <input type="hidden" name="sector" value="{{request.GET.sector}}">
+                <input type="search" name="search" value="{{request.GET.search}}" placeholder="{% translate 'Rechercher dans les articles' %}" class="form-control border-top-0 border-start-0 border-end-0 rounded-top ">
                 <button type="submit" class="btn btn-light p-0"><i class="bi bi-search"></i></button>
 
             </div>
         </form>
       </div>
       <div class=" container articles">
-        <div class="border-top border-secondary border-2 row align-items-start align-items-lg-center  justify-content-between pt-3 pt-md-4 mb-4 mx-1">
-          <div class="col-4 col-lg-2 align-self-start text-center">
-            <img src="{% static 'img/article1.jpg' %}" alt="culture ouest cameroun" class="img-fluid">
+        {% for article in articles %}
+          <div class="border-top border-secondary border-2 row align-items-start align-items-lg-center  justify-content-between pt-3 pt-md-4 mb-4 mx-1">
+            <div class="col-4 col-lg-2 align-self-start text-center">
+              <div class="img">
+                <img src="{{article.image.url}}" alt="{{article.image.default_alt_text}}" class="img-fluid">
+                <span>@:{{article.image.author}}</span>
+              </div>
+              
+            </div>
+            <div class="col-0  col-lg-2 d-none d-lg-block col-lg-3 fst-italic align-self-center">
+              <h3>{{article.title}} </h3>
+            </div>
+            <div class="col-6 col-lg-6 d-flex flex-column align-self-center ">
+              <h3  class="fs-5 d-block d-lg-none fst-italic">{{article.title}}</h3>
+              <p class="text-secondary multiple-truncate">{{article.summary|truncatewords:50}}</p>
+            </div>
+            <div class="col-2 col-lg-1 text-center align-self-center">
+                <a href="{{article.get_absolute_url}}" class="link-secondary text-decoration-none">
+                  <i class=" fs-2 text-primary bi bi-play-circle-fill d-block"></i>
+                  <i class="fs-6">{% translate "Lire l'article" %}</i>
+                </a>
+            
+            </div>
           </div>
-          <div class="col-0  col-lg-2 d-none d-lg-block col-lg-3 fst-italic align-self-center">
-            <h3>Lorem ipsum dolor sit amet, consectetur </h3>
-          </div>
-          <div class="col-6 col-lg-6 d-flex flex-column align-self-center ">
-            <h3  class="fs-5 d-block d-lg-none fst-italic">Lorem ipsum dolor sit amet, consectetur </h3>
-            <p class="text-secondary multiple-truncate">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur aut iure ab officiis, totam reprehenderit pariatur,
-                quod magni harum maiores necessitatibus sit omnis impedit mollitia suscipit a incidunt ipsum veritatis.
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-          </div>
-          <div class="col-2 col-lg-1 text-center align-self-center">
-              <a href="article.html" class="link-secondary text-decoration-none">
-                <i class=" fs-2 text-primary bi bi-play-circle-fill d-block"></i>
-                <i class="fs-6">Lire l'article</i>
-              </a>
-          
-          </div>
-        </div>
-        <div class="border-top border-secondary border-2 row align-items-start align-items-lg-center  justify-content-between pt-3 pt-md-4 mb-4 mx-1">
-          <div class="col-4 col-lg-2 align-self-start text-center">
-            <img src="{% static 'img/article3.png' %}" alt="culture ouest cameroun" class="img-fluid">
-          </div>
-          <div class="col-0  col-lg-2 d-none d-lg-block col-lg-3 fst-italic align-self-center">
-            <h3>Lorem ipsum dolor sit amet, consectetur </h3>
-          </div>
-          <div class="col-6 col-lg-6 d-flex flex-column align-self-center ">
-            <h3  class="fs-5 d-block d-lg-none fst-italic">Lorem ipsum dolor sit amet, consectetur </h3>
-            <p class="text-secondary multiple-truncate">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur aut iure ab officiis, totam reprehenderit pariatur,
-                quod magni harum maiores necessitatibus sit omnis impedit mollitia suscipit a incidunt ipsum veritatis.
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-          </div>
-          <div class="col-2 col-lg-1 text-center align-self-center">
-              <a href="article.html" class="link-secondary text-decoration-none">
-                <i class=" fs-2 text-primary bi bi-play-circle-fill d-block"></i>
-                <i class="fs-6">Lire l'article</i>
-              </a>
-          
-          </div>
-        </div>
-        <div class="border-top border-secondary border-2 row align-items-start align-items-lg-center  justify-content-between pt-3 pt-md-4 mb-4 mx-1">
-          <div class="col-4 col-lg-2 align-self-start text-center">
-            <img src="{% static 'img/article2.jpg' %}" alt="culture ouest cameroun" class="img-fluid">
-          </div>
-          <div class="col-0  col-lg-2 d-none d-lg-block col-lg-3 fst-italic align-self-center">
-            <h3>Lorem ipsum dolor sit amet, consectetur </h3>
-          </div>
-          <div class="col-6 col-lg-6 d-flex flex-column align-self-center ">
-            <h3  class="fs-5 d-block d-lg-none fst-italic">Lorem ipsum dolor sit amet, consectetur </h3>
-            <p class="text-secondary multiple-truncate">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur aut iure ab officiis, totam reprehenderit pariatur,
-                quod magni harum maiores necessitatibus sit omnis impedit mollitia suscipit a incidunt ipsum veritatis.
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-          </div>
-          <div class="col-2 col-lg-1 text-center align-self-center">
-              <a href="article.html" class="link-secondary text-decoration-none">
-                <i class=" fs-2 text-primary bi bi-play-circle-fill d-block"></i>
-                <i class="fs-6">Lire l'article</i>
-              </a>
-          
-          </div>
-        </div>
-        <div class="border-top border-secondary border-2 row align-items-start align-items-lg-center  justify-content-between pt-3 pt-md-4 mb-4 mx-1">
-          <div class="col-4 col-lg-2 align-self-start text-center">
-            <img src="{% static 'img/chefferie1.PNG' %}" alt="culture ouest cameroun" class="img-fluid">
-          </div>
-          <div class="col-0  col-lg-2 d-none d-lg-block col-lg-3 fst-italic align-self-center">
-            <h3>Lorem ipsum dolor sit amet, consectetur </h3>
-          </div>
-          <div class="col-6 col-lg-6 d-flex flex-column align-self-center ">
-            <h3  class="fs-5 d-block d-lg-none fst-italic">Lorem ipsum dolor sit amet, consectetur </h3>
-            <p class="text-secondary multiple-truncate">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur aut iure ab officiis, totam reprehenderit pariatur,
-                quod magni harum maiores necessitatibus sit omnis impedit mollitia suscipit a incidunt ipsum veritatis.
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-          </div>
-          <div class="col-2 col-lg-1 text-center align-self-center">
-              <a href="article.html" class="link-secondary text-decoration-none">
-                <i class=" fs-2 text-primary bi bi-play-circle-fill d-block"></i>
-                <i class="fs-6">Lire l'article</i>
-              </a>
-          
-          </div>
-        </div>
+        {% empty %}
+          <p class="text-center fs-5"> 😥  {% translate 'Aucun article existant ne correspond à votre recherche' %} </p>
+        {% endfor %}
+        
       </div>
 
       <div aria-label="Page navigation" class="d-flex justify-content-end container">
@@ -145,7 +80,7 @@
             {% if page_obj.has_previous %}
                 <li class="page-item me-1 me-sm-2"> 
                     <a href="?page={{ page_obj.previous_page_number }}" class="page-link bg-transparent border-0">
-                        Previous
+                        {% translate 'Précédent' %}
                     </a>
                 </li>
             {% endif %}
@@ -162,16 +97,21 @@
             {% if page_obj.has_next %}
                 <li class="page-item  me-sm-2">
                     <a href="?page={{ page_obj.next_page_number }}" class="page-link bg-transparent border-0">
-                       Next
+                      {% translate 'Suivant' %}
                     </a>
                 </li>
             {% endif %}
         </ul>
     </div>
+    <div class="mt-5">
       {% include "vitrine/newsletter.html" %}
+    </div>
+     
 
    
     {% endblock content %}
   
     {% block js %}
+      <script type="text/javascript" src="{% static 'blog/js/articles.js' %}"></script>
+      <script type="text/javascript" src="{% static 'vitrine/js/newsletter.js' %}"></script>
     {% endblock js %}

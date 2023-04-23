@@ -12,6 +12,12 @@
    transform: scale(1.1) ;
 }
 
+.article img{
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
 .articles a i.bi{
     transition: .3s 0s ease;
  }
@@ -75,14 +81,14 @@
 
 .comment-separator:before{
     content:"";
-    height: .75px;
+    height: .05rem;
     background-color: var(--bs-secondary);
     width:100%;
 
 }
 .comment-separator:after{
     content:"";
-    height: .75px;
+    height: .05rem;
     background-color: var(--bs-secondary);
     width: 100%;
 
@@ -94,7 +100,15 @@ textarea[name=comment]{
     max-width:700px;
 }
 
-.comment form{
+form.comment{
     position:sticky;
     top:2rem;
+}
+
+form.comment button{
+    width:140px;
+}
+
+.comments >div{
+    transition: .5s;
 }

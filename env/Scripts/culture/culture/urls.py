@@ -15,12 +15,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
+from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
+    path('i18n/', include('django.conf.urls.i18n')),
+    path("rosetta/", include("rosetta.urls")),
+]
+urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
     path("blog/", include(("blog.urls", "blog"))),
     path("", include(("vitrine.urls", "vitrine"))),
     path("mdeditor/", include("mdeditor.urls")),
-    path("__debug__/", include("debug_toolbar.urls")),
     path("file/", include("filer.urls")),
-]
+)
+
+
+if settings.DEBUG:
+    urlpatterns.append(
+        path("__debug__/", include("debug_toolbar.urls")),
+    )
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

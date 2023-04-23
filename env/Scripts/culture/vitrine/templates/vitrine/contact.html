@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 
-    {% block title %} Contact {%endblock title%}
+    {% block title %} {%translate 'Contact' %} {%endblock title%}
     {% block css %}
     {% endblock css %}
     {% block content %}
@@ -15,7 +16,7 @@
                 <a href="" class="link-success"><i class="bi bi-instagram fs-4 me-2"></i></a>
                 <a href="" class="link-success"><i class="bi bi-pinterest fs-4 me-2"></i></a>
               </div>
-              <h3 class="text-warning">Contactez nous via le formulaire</h3>
+              <h3 class="text-warning">{% translate 'Contactez nous via le formulaire' %}</h3>
             <form action="" method="post">
                 {% csrf_token %}
                 {% for field in form %}
@@ -24,14 +25,14 @@
                     {{field}}
                     <div>
                         {% for error in field.errors %}
-                            <small class="text-danger">{{error}}</small> <br>
+                            <small class="text-danger fs-6">{{error}}</small> <br>
                         {% endfor%}
                     </div>
                 </div>
                 
                 {% endfor %}
                 <div class="d-flex justify-content-center">
-                   <button type="submit" class="btn btn-warning fw-bold fst-italic">Envoyer</button>
+                   <button type="submit" class="btn btn-warning fw-bold fst-italic">{% translate 'Envoyer' %} </button>
                 </div>
             </form>
           </div>

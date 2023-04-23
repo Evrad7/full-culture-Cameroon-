@@ -1,18 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+{% load markdowny_tags %}
 
-
-    {% block title %} {{region.name}} {%endblock title%}
+    {% block title %} {{article.title}} {%endblock title%}
     {% block css %}
       <link rel="stylesheet" type="text/css" href="{% static 'blog/css/article.css' %}">
     {% endblock css %}
     {% block content %}
     {% include "navbar.html" with active=4 %}
-      <div>
-        <img src="{% static 'img/banner.jpg' %}" alt="culture camerounaise" class="banner w-100">
+      <div class="img  d-block">
+        <img src="{{article.banner.url}}" alt="{{article.banner.default_alt_text}}" class="banner w-100">
+        <span>@:{{article.banner.author}}</span>
     </div>
     <div class="container mb-5">
-      <h1 class="text-primary fst-italic mb-4">Lorem ipsum dolor sit amet, consectetur</h1>
+      <h1 class="text-primary fst-italic mb-4">{{article.title}}</h1>
         <div class="row justify-content-between mx-1">
           <div class="content col-12 col-lg-9 order-2 order-lg-1 d-flex ">
             <div class="vertical-separator me-1 me-md-5">
@@ -25,48 +27,20 @@
               </div>
             </div>
             <div>
-              <p class="fs-5 text-secondary">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
-                 doloremque necessitatibus sit? Quas molestiae, quidem provident repudiandae neque nostrum praesentium.
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
-                 doloremque necessitatibus sit? Quas molestiae, quidem provident repudiandae neque nostrum praesentium.
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
-                 doloremque necessitatibus sit? Quas molestiae, quidem provident repudiandae neque nostrum praesentium.
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
-                 doloremque necessitatibus sit? Quas molestiae, quidem provident repudiandae neque nostrum praesentium.
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
-                 doloremque necessitatibus sit? Quas molestiae, quidem provident repudiandae neque nostrum praesentium.Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
-                 doloremque necessitatibus sit? Quas molestiae, quidem provident repudiandae neque nostrum praesentium.
-              </p>
-              <div class="my-5">
-                <img src="{% static 'img/article5.PNG' %}" alt="culture camerounaise" class="img-fluid">
+              <div class="fs-5 text-secondary article">
+               {{article.content|markdowny}}
               </div>
-              <p class="fs-5 text-secondary">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
-                 doloremque necessitatibus sit? Quas molestiae, quidem provident repudiandae neque nostrum praesentium.
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
-                 doloremque necessitatibus sit? Quas molestiae, quidem provident repudiandae neque nostrum praesentium.
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
-                 doloremque necessitatibus sit? Quas molestiae, quidem provident repudiandae neque nostrum praesentium.
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
-                 doloremque necessitatibus sit? Quas molestiae, quidem provident repudiandae neque nostrum praesentium.
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
-                 doloremque necessitatibus sit? Quas molestiae, quidem provident repudiandae neque nostrum praesentium.Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam cum, exercitationem accusantium nostrum placeat distinctio alias sapiente nesciunt quidem,
-                 dolore </p>
-                 <div class="my-5">
-                  <img src="{% static 'img/article6.PNG' %}" alt="culture camerounaise" class="img-fluid">
-                </div>
             </div>
             
           </div>
           <div  class="order-1 order-lg-1 col-12 col-lg-3">
            <div class="border-2 p-2 shadow bg-warning position-sticky rounded mb-4">
-            <a href="#newsletter" class="btn btn-dark">S'abonner à la newsletter</a>
-            <form action="" class=" mt-3">
+            <a href="#newsletter" class="btn btn-dark">{% translate "S'abonner à la newsletter" %}</a>
+            <form action="{% url 'blog:articles' %}" method="get" class=" mt-3">
               <div class="search position-relative">
-                <label for="search" class=" fs-5 fst-italic">Rechercher dans les articles</label>
+                <label for="search" class=" fs-5 fst-italic">{% translate 'Rechercher dans les articles' %}</label>
                 <div class="position-relative">
-                  <input type="search"  id="search" class="form-control border-top-0 border-start-0 border-end-0 rounded-top">
+                  <input type="search"  id="search" name="search" class="form-control border-top-0 border-start-0 border-end-0 rounded-top">
                   <button type="submit" class="btn btn-light p-0"><i class="bi bi-search"></i></button>
                 </div>
               
@@ -78,84 +52,56 @@
         </div>
        
       <div class="my-3">
-        <h5 class="comment-separator d-flex align-items-center" ><span class="mx-2">Les commentaires</span> </h5>
+        <h5 class="comment-separator d-flex align-items-center" ><span class="mx-2">{% translate 'Les commentaires' %}</span> </h5>
         <div class="row mt-5 ">
-          <div class="col-12 col-lg-6 order-3 order-lg-1">
-            <div class="mb-5">
-              <p class="fs-5 text-secondary">Lorem ipsum dolor
-                 sit amet consectetur adipisicing elit. Rem enim dignissimos earum ipsum assumenda qui sit minus facilis repudiandae
-                 , unde maiores id, corrupti consectetur cumque corporis possimus soluta laborum sunt!</p>
-                 <div class="text-end fst-italic"><span>03 Avril 2020</span></div>
-                 <hr>
-            </div>
-            <div class="my-5">
-              <p class="fs-5 text-secondary">Lorem ipsum dolor
-                 sit amet consectetur adipisicing elit. Rem enim dignissimos earum ipsum assumenda qui sit minus facilis repudiandae
-                 , unde maiores id, corrupti consectetur cumque corporis possimus soluta laborum sunt!</p>
-                 <div class="text-end fst-italic"><span>03 Avril 2020</span></div>
-                 <hr>
-            </div>
+          <div class="col-12 col-lg-6 order-3 order-lg-1 comments">
+            {% for comment in article.comment_set.all %}
+              <div class="mb-5">
+                <div class="d-flex align-items-center mb-2">
+                    <div class="rounded-circle border border-secondary p-1 bg-light"><i class="bi bi-person-fill fs-4 p-1"></i></div>
+                    <span class="ms-2 fs-6 ">{{comment.author}}</span>
+                </div>
+                <p class="fs-5 text-secondary mb-1">{{comment.content}}</p>
+                  <div class="text-end fst-italic"><span>{{comment.created_at}}</span></div>
+                  <hr>
+              </div>
+            {% empty %}
+              {% include 'blog/comment_form.html' %}
+            {% endfor %}
           </div>
           <div class="col-0 col-lg-1 order-2"></div>
-        
-        <div class="col-12 col-lg-5 order-1 order-lg-3 mb-4 comment">
-          <form action="" class="">
-            <textarea name="comment" id="comment" cols="20" rows="5" class="form-control">
-              Laissez vos impressions
-            </textarea>
-            <div class="mt-3 ms-5">
-              <button type="submit" class="btn btn-warning fst-italic fw-bold">Envoyer</button>
+            <div class="col-12 col-lg-5 order-1 order-lg-3 mb-4" id="comment-box">
+            {% if not article.comment_set.count == 0 %}
+               {% include 'blog/comment_form.html' %}
+             {% endif %}
             </div>
-          </form>
-        </div>
       </div>
       </div>
     
       <div class="my-5">
-        <h1 class="text-primary fst-italic">Ceci pourrait vous interessez</h1>
+        <h1 class="text-primary fst-italic">{% translate 'Ceci pourrait vous interessez' %}</h1>
         <div class=" container articles mt-5">
-          <div class="border-top border-secondary border-2 row align-items-start align-items-lg-center  justify-content-between pt-3 pt-md-4 mb-4 mx-1">
-            <div class="col-4 col-lg-2 align-self-start text-center">
-              <img src="{% static 'img/article2.jpg' %}" alt="culture ouest cameroun" class="img-fluid">
+          {% for article in articles %}
+            <div class="border-top border-secondary border-2 row align-items-start align-items-lg-center  justify-content-between pt-3 pt-md-4 mb-4 mx-1">
+              <div class="col-4 col-lg-2 align-self-start text-center">
+                <img src="{{article.image.url}}" alt="culture ouest cameroun" class="img-fluid">
+              </div>
+              <div class="col-0  col-lg-2 d-none d-lg-block col-lg-3 fst-italic align-self-center">
+                <h3>{{article.title}} </h3>
+              </div>
+              <div class="col-6 col-lg-6 d-flex flex-column align-self-center ">
+                <h3  class="fs-5 d-block d-lg-none fst-italic">{{article.title}}</h3>
+                <p class="text-secondary multiple-truncate">{{article.summary|truncatewords:50}}</p>
+              </div>
+              <div class="col-2 col-lg-1 text-center align-self-center">
+                  <a href="{{article.get_absolute_url}}" class="link-secondary text-decoration-none">
+                    <i class=" fs-2 text-primary bi bi-play-circle-fill d-block"></i>
+                    <i class="fs-6">{% translate 'Lire l'article' %}</i>
+                  </a>
+              
+              </div>
             </div>
-            <div class="col-0  col-lg-2 d-none d-lg-block col-lg-3 fst-italic align-self-center">
-              <h3>Lorem ipsum dolor sit amet, consectetur </h3>
-            </div>
-            <div class="col-6 col-lg-6 d-flex flex-column align-self-center ">
-              <h3  class="fs-5 d-block d-lg-none fst-italic">Lorem ipsum dolor sit amet, consectetur </h3>
-              <p class="text-secondary multiple-truncate">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur aut iure ab officiis, totam reprehenderit pariatur,
-                  quod magni harum maiores necessitatibus sit omnis impedit mollitia suscipit a incidunt ipsum veritatis.
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-            </div>
-            <div class="col-2 col-lg-1 text-center align-self-center">
-                <a href="" class="link-secondary text-decoration-none">
-                  <i class=" fs-2 text-primary bi bi-play-circle-fill d-block"></i>
-                  <i class="fs-6">Lire l'article</i>
-                </a>
-            
-            </div>
-          </div>
-          <div class="border-top border-secondary border-2 row align-items-start align-items-lg-center  justify-content-between pt-3 pt-md-4 mb-4 mx-1">
-            <div class="col-4 col-lg-2 align-self-start text-center">
-              <img src="{% static 'img/chefferie1.PNG' %}" alt="culture ouest cameroun" class="img-fluid">
-            </div>
-            <div class="col-0  col-lg-2 d-none d-lg-block col-lg-3 fst-italic align-self-center">
-              <h3>Lorem ipsum dolor sit amet, consectetur </h3>
-            </div>
-            <div class="col-6 col-lg-6 d-flex flex-column align-self-center ">
-              <h3  class="fs-5 d-block d-lg-none fst-italic">Lorem ipsum dolor sit amet, consectetur </h3>
-              <p class="text-secondary multiple-truncate">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur aut iure ab officiis, totam reprehenderit pariatur,
-                  quod magni harum maiores necessitatibus sit omnis impedit mollitia suscipit a incidunt ipsum veritatis.
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-            </div>
-            <div class="col-2 col-lg-1 text-center align-self-center">
-                <a href="" class="link-secondary text-decoration-none">
-                  <i class=" fs-2 text-primary bi bi-play-circle-fill d-block"></i>
-                  <i class="fs-6">Lire l'article</i>
-                </a>
-            
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -165,4 +111,6 @@
     {% endblock content %}
   
     {% block js %}
+    <script type="text/javascript" src="{% static 'blog/js/article.js' %}"></script>
+      <script type="text/javascript" src="{% static 'vitrine/js/newsletter.js' %}"></script>
     {% endblock js %}
