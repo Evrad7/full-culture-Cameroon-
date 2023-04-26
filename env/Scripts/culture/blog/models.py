@@ -13,7 +13,7 @@ class Article(models.Model):
     image = FilerImageField(
         null=True, on_delete=models.SET_NULL, verbose_name=_("image de présentation"), related_name="article_image")
     title = models.CharField(max_length=60, verbose_name=_("titre"))
-    summary = models.TextField(null=True, verbose_name=_("titre"))
+    summary = models.TextField(null=True, verbose_name=_("résumé"))
     published = models.BooleanField(
         default=False, blank=True, verbose_name=_("publié"))
     created_at = models.DateTimeField(

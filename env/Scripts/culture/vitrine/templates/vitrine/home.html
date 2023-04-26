@@ -27,7 +27,7 @@
       {% for content in contents %}
         {%  if content.pattern_content_home_page.id == "images_left-text_right" %}
         <div class="row my-5 p-1" style="background-color: #383333;">
-            <div class="col-12 col-md-6 d-flex justify-content-center align-items-center" >
+            <div class="col-12 col-md-6 d-flex justify-content-center align-items-center scrollreveal-img" >
                 {% for media in content.mediacontent_set.all %}
                   <div class="img">
                     <img src="{{media.image.url}}" class="img-fluid"  style="max-height: 400px;" alt="{{madia.image.alt}}">
@@ -35,7 +35,7 @@
                   </div>
                 {% endfor %}
             </div>
-            <div class="text-light col-12 col-md-6 py-5 px-3 px-md-4 ">
+            <div class="text-light col-12 col-md-6 py-5 px-3 px-md-4 scrollreveal-text">
                 <h2 class="text-center mb-4">{{content.title}}</h2>
                 <p class="text-center fs-5">
                   {{content.body|truncatewords:100}}
@@ -53,7 +53,7 @@
             <div class="img-separator overflow-hidden mb ">
             </div>
             <h1 class="text-primary text-center fst-italic">{{content.title}}</h1>
-            <div class="glider-contain position-relative">
+            <div class="glider-contain position-relative  scrollreveal-img">
               <div class="glider overflow-hidden" id="glider-{{forloop.counter}}">
                 {% for media in content.mediacontent_set.all %}
                   <div class="me-1 me-sm-2 me-md-4">
@@ -70,7 +70,7 @@
             </div>
             <div class="text-end mt-3 pe-1 pe-sm-5">
               <a href="" class="btn text-success  btn-transparent border-secondary border-end-0 border-start-0 d-inline-flex align-items-center btn-arrow">
-                <span class="fst-italic">{% translate 'En savoir plus' %} sur les photos</span> <i class="ms-2 bi bi-arrow-right fs-4"></i>
+                <span class="fst-italic">{% translate 'En savoir plus sur les photos' %} </span> <i class="ms-2 bi bi-arrow-right fs-4"></i>
               </a>
           </div>
           </div>
@@ -84,7 +84,7 @@
             <h1 class="text-primary d-inline fst-italic">{{content.title}}.</h1>
           </div>
           <div class="row">
-            <div class="col-12 col-md-6 order-2 order-md-1 d-flex flex-column align-items-center justify-content-center">
+            <div class="col-12 col-md-6 order-2 order-md-1 d-flex flex-column align-items-center justify-content-center scrollreveal-text">
               <p class="fs-5 text-center text-secondary">
                 {{content.body|truncatewords:100}}
               </p>
@@ -94,7 +94,7 @@
                   </a>
               </div>
             </div>
-            <div class="col-12 col-md-6 order-1 order-md-2 d-flex justify-content-end mb-4 mb-md-0">
+            <div class="col-12 col-md-6 order-1 order-md-2 d-flex justify-content-end mb-4 mb-md-0  scrollreveal-img">
               {% for media in content.mediacontent_set.all %}
                 <div class="img">
                   <img src="{{media.image.url}}" class="img-fluid" alt="{{media.image.default_alt_text}}">
@@ -106,7 +106,7 @@
         </div>
         {% elif content.pattern_content_home_page.id == "text_top-image_in_frame" %}
         <div class="px-1 ps-sm-3">
-          <div class="mt-5 mx-3 d-sm-flex d-inline-block mb-3">
+          <div class="mt-5 mx-3 d-sm-flex d-inline-block mb-3  scrollreveal-text">
             <div class="d-inline">
               <div class="point bg-primary d-inline-block me-1  me-sm-4 mt-4" >
               </div>
@@ -115,11 +115,11 @@
           </div>
           <div class="row">
             <div class="col-0 col-md-3"></div>
-            <div class="col-0 col-md-6">
-              <p class="text-secondary fs-5 text-center">{{content.body|truncatewords:50}}</p>
+            <div class="col-0 col-md-6  ">
+              <p class="text-secondary fs-5 text-center scrollreveal-text">{{content.body|truncatewords:50}}</p>
             </div>
             <div class="col-0 col-md-3"></div>
-            <div class="d-flex justify-content-center align-items-center">
+            <div class="d-flex justify-content-center align-items-center scrollreveal-img">
               <div class="col-0 col-md-2"></div>
               <div class="col-12 col-md-7 d-flex justify-content-center picture-frame">
                 {% with medias=content.mediacontent_set.all %}
@@ -165,14 +165,14 @@
         </div>
         {% elif content.pattern_content_home_page.id == "images_top-text_bottom" %}
         <div class="px-1 ps-sm-3">
-          <div class="mt-5 mx-3 d-sm-flex d-inline-block mb-3">
+          <div class="mt-5 mx-3 d-sm-flex d-inline-block mb-3 scrollreveal-text">
             <div class="d-inline">
               <div class="point bg-primary d-inline-block me-1  me-sm-4 mt-4" >
               </div>
             </div>
             <h1 class="text-primary d-inline fst-italic">{{content.title}}.</h1>
           </div>
-          <div class="text-center mx-1">
+          <div class="text-center mx-1 scrollreveal-img">
             {% for media in content.mediacontent_set.all %}
               <div class="img">
                 <img src="{{media.image.url}}" class="img-fluid" alt="{{media.image.default_alt_text}}">
@@ -180,11 +180,11 @@
               </div>
             {% endfor %}
           </div>
-          <p class="fs-5 text-secondary mt-5">
+          <p class="fs-5 text-secondary mt-5 scrollreveal-text">
             {{content.body|truncatewords:100}}
           </p>
           <div class="text-center mb-3">
-            <a href="" class="btn text-success  btn-transparent border-secondary border-end-0 border-start-0 d-inline-flex align-items-center btn-arrow">
+            <a href="" class="btn text-success  btn-transparent border-secondary border-end-0 border-start-0 d-inline-flex align-items-center btn-arrow scrollreveal-text">
               <span class="fst-italic">{% translate 'En savoir plus' %}</span> <i class="ms-2 bi bi-arrow-right fs-4"></i>
             </a>
         </div>

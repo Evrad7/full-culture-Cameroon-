@@ -69,7 +69,24 @@ function add_comment_ajax(data, url){
                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
                 </div>"
             }
-           
+               
+        }
+        else if(xhr.status===403){
+            document.querySelector(".alert-container").innerHTML="\
+            <div class='alert alert-warning alert-dismissible fade show' role='alert'>\
+            <i class='bi bi-exclamation-diamond-fill'></i>\
+                <strong>You can not write more than 03 comments per day</strong> \
+            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
+            </div>"
+        
+        }
+        else{
+            document.querySelector(".alert-container").innerHTML="\
+            <div class='alert alert-danger alert-dismissible fade show' role='alert'>\
+            <i class='bi bi-exclamation-diamond-fill'></i>\
+                <strong>Une erreur réseau .</strong> \
+            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
+            </div>"
         }
     }
     xhr.onerror=function(){
@@ -81,3 +98,4 @@ function add_comment_ajax(data, url){
         </div>"
     }
 }
+

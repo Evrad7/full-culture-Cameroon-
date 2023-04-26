@@ -33,11 +33,11 @@ function sendDataAjax(data, url){
             }
             else{
                 infoElement.innerHTML="\
-                <small class='text-success fs-6 '>ajouté avec success</small>"
+                <small class='text-success fs-6 '>"+xhr.response.message+"</small>"
                 document.querySelector(".alert-container").innerHTML="\
                 <div class='alert alert-success alert-dismissible fade show' role='alert'>\
                 <i class='bi bi-check-circle-fill'></i>\
-                 <strong>Ajout à la newletter réussi.</strong> \
+                 <strong>"+xhr.response.message+"</strong> \
                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
                 </div>"
             }
@@ -51,13 +51,13 @@ function sendDataAjax(data, url){
             <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
             </div>"
         }
-        console.log(xhr.response)
+  
     }
     xhr.onerror=function(){
         document.querySelector(".alert-container").innerHTML="\
             <div class='alert alert-danger alert-dismissible fade show' role='alert'>\
             <i class='bi bi-exclamation-diamond-fill'></i>\
-             Une erreur de connection est survenue \
+             Une erreur de connection  réseau est survenue \
             <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>\
             </div>"
     }

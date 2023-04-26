@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-23 10:10+0100\n"
-"PO-Revision-Date: 2023-04-23 10:12+0000\n"
+"POT-Creation-Date: 2023-04-25 14:46+0100\n"
+"PO-Revision-Date: 2023-04-25 14:47+0000\n"
 "Last-Translator:   <tsoataevrad7@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -27,10 +27,13 @@ msgstr ""
 msgid "image de présentation"
 msgstr ""
 
-#: .\blog\models.py:15 .\blog\models.py:16 .\blog\models.py:63
-#: .\vitrine\models.py:138
+#: .\blog\models.py:15 .\blog\models.py:63 .\vitrine\models.py:138
 msgid "titre"
 msgstr "title"
+
+#: .\blog\models.py:16
+msgid "résumé"
+msgstr ""
 
 #: .\blog\models.py:18
 msgid "publié"
@@ -81,10 +84,8 @@ msgid "commentaires"
 msgstr "comments"
 
 #: .\blog\templates\blog\article.html:38
-#, fuzzy
-#| msgid "contact pour la newsletter"
 msgid "S'abonner à la newsletter"
-msgstr "contact for newsletter"
+msgstr "Subscribe to the newsletter"
 
 #: .\blog\templates\blog\article.html:41
 #: .\blog\templates\blog\articles.html:41
@@ -92,8 +93,6 @@ msgid "Rechercher dans les articles"
 msgstr "search in articles"
 
 #: .\blog\templates\blog\article.html:55
-#, fuzzy
-#| msgid "commentaires"
 msgid "Les commentaires"
 msgstr "comments"
 
@@ -102,10 +101,9 @@ msgid "Ceci pourrait vous interessez"
 msgstr "This may be of interest to you"
 
 #: .\blog\templates\blog\article.html:99
-#, fuzzy
-#| msgid "Lire plus ..."
-msgid "Lire l"
-msgstr "Read more ..."
+#: .\blog\templates\blog\articles.html:67
+msgid "Lire l'article"
+msgstr "read the article"
 
 #: .\blog\templates\blog\articles.html:19
 msgid "Les articles"
@@ -118,10 +116,6 @@ msgstr "From the most recents"
 #: .\blog\templates\blog\articles.html:29
 msgid "Tout"
 msgstr "All"
-
-#: .\blog\templates\blog\articles.html:67
-msgid "Lire l'article"
-msgstr "read the article"
 
 #: .\blog\templates\blog\articles.html:73
 msgid "Aucun article existant ne correspond à votre recherche"
@@ -148,11 +142,11 @@ msgstr "Leave your feedback"
 msgid "Envoyer"
 msgstr "Send"
 
-#: .\culture\settings.py:133
+#: .\culture\settings.py:135
 msgid "English"
 msgstr ""
 
-#: .\culture\settings.py:134
+#: .\culture\settings.py:136
 msgid "French"
 msgstr ""
 
@@ -359,12 +353,16 @@ msgid "Découvrez toute la richesse de la culture <br> camerounaise"
 msgstr "Discover all the richness of the cameroonian  culture"
 
 #: .\vitrine\templates\vitrine\home.html:45
-#: .\vitrine\templates\vitrine\home.html:73
 #: .\vitrine\templates\vitrine\home.html:93
 #: .\vitrine\templates\vitrine\home.html:162
 #: .\vitrine\templates\vitrine\home.html:188
 msgid "En savoir plus"
 msgstr "know more"
+
+#: .\vitrine\templates\vitrine\home.html:73
+#| msgid "En savoir plus"
+msgid "En savoir plus sur les photos"
+msgstr "know more about pictures"
 
 #: .\vitrine\templates\vitrine\home.html:204
 msgid "Les articles les plus consultés"
@@ -409,13 +407,20 @@ msgid "S'abonner"
 msgstr "Subscribe"
 
 #: .\vitrine\templates\vitrine\region.html:15
-#| msgid "Régions"
 msgid "Région de"
 msgstr "Region"
 
 #: .\vitrine\templates\vitrine\region.html:18
 msgid "Cameroun"
 msgstr "Cameroon"
+
+#: .\vitrine\views.py:76
+msgid "Ajout à la newsletter réussi"
+msgstr "Successfully added to the newsletter"
+
+#, fuzzy
+#~ msgid "Lire l"
+#~ msgstr "Read more ..."
 
 #~ msgid "Abonnez vous à notre"
 #~ msgstr "Subscribe to our "

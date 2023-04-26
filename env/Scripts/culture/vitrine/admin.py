@@ -1,10 +1,11 @@
 from django.contrib import admin
+from modeltranslation.admin import TabbedTranslationAdmin
 from .models import Sector, Region, Company, SocialLink, Contact, ContactForNewLetter, Content, MediaContent,\
     PatternContent
 
 
 @admin.register(Sector)
-class SectorAdmin(admin.ModelAdmin):
+class SectorAdmin(TabbedTranslationAdmin):
     fields = ["name", "description"]
     list_display = ["slug", "name", "description"]
     search_fields = ["name", "description"]
@@ -12,7 +13,7 @@ class SectorAdmin(admin.ModelAdmin):
 
 
 @admin.register(Region)
-class RegionAdmin(admin.ModelAdmin):
+class RegionAdmin(TabbedTranslationAdmin):
     fields = ["name", "description"]
     list_display = ["slug", "name", "description"]
     search_fields = ["name", "description"]
@@ -28,7 +29,7 @@ class SocialLinkInline(admin.TabularInline):
 
 
 @admin.register(Company)
-class CompanyAdmin(admin.ModelAdmin):
+class CompanyAdmin(TabbedTranslationAdmin):
     fields = ["logo", "name", "slogan", "description",
               "email", "phone1", "phone2", "address"]
     list_display = ["name", "slogan", "logo", "email", "phone1"]
@@ -71,7 +72,7 @@ class MediaContentInline(admin.TabularInline):
 
 
 @admin.register(Content)
-class ContentAdmin(admin.ModelAdmin):
+class ContentAdmin(TabbedTranslationAdmin):
     fields = ["region", "sector", "title", "body",
               "is_in_home_page", "position", "pattern_content_home_page", "pattern_content_others_pages"]
     list_display = ["title", "region", "sector", "position"]

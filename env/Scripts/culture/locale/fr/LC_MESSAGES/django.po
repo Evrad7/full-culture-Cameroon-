@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-23 10:11+0100\n"
+"POT-Creation-Date: 2023-04-25 14:46+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,9 +26,12 @@ msgstr ""
 msgid "image de présentation"
 msgstr ""
 
-#: .\blog\models.py:15 .\blog\models.py:16 .\blog\models.py:63
-#: .\vitrine\models.py:138
+#: .\blog\models.py:15 .\blog\models.py:63 .\vitrine\models.py:138
 msgid "titre"
+msgstr ""
+
+#: .\blog\models.py:16
+msgid "résumé"
 msgstr ""
 
 #: .\blog\models.py:18
@@ -95,8 +98,8 @@ msgstr ""
 msgid "Ceci pourrait vous interessez"
 msgstr ""
 
-#: .\blog\templates\blog\article.html:99
-msgid "Lire l"
+#: .\blog\templates\blog\article.html:99 .\blog\templates\blog\articles.html:67
+msgid "Lire l'article"
 msgstr ""
 
 #: .\blog\templates\blog\articles.html:19
@@ -109,10 +112,6 @@ msgstr ""
 
 #: .\blog\templates\blog\articles.html:29
 msgid "Tout"
-msgstr ""
-
-#: .\blog\templates\blog\articles.html:67
-msgid "Lire l'article"
 msgstr ""
 
 #: .\blog\templates\blog\articles.html:73
@@ -140,11 +139,11 @@ msgstr ""
 msgid "Envoyer"
 msgstr ""
 
-#: .\culture\settings.py:133
+#: .\culture\settings.py:135
 msgid "English"
 msgstr ""
 
-#: .\culture\settings.py:134
+#: .\culture\settings.py:136
 msgid "French"
 msgstr ""
 
@@ -350,11 +349,14 @@ msgid "Découvrez toute la richesse de la culture <br> camerounaise"
 msgstr ""
 
 #: .\vitrine\templates\vitrine\home.html:45
-#: .\vitrine\templates\vitrine\home.html:73
 #: .\vitrine\templates\vitrine\home.html:93
 #: .\vitrine\templates\vitrine\home.html:162
 #: .\vitrine\templates\vitrine\home.html:188
 msgid "En savoir plus"
+msgstr ""
+
+#: .\vitrine\templates\vitrine\home.html:73
+msgid "En savoir plus sur les photos"
 msgstr ""
 
 #: .\vitrine\templates\vitrine\home.html:204
@@ -400,4 +402,8 @@ msgstr ""
 
 #: .\vitrine\templates\vitrine\region.html:18
 msgid "Cameroun"
+msgstr ""
+
+#: .\vitrine\views.py:76
+msgid "Ajout à la newsletter réussi"
 msgstr ""

@@ -1,6 +1,10 @@
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render, HttpResponseRedirect, redirect
 from django.http import JsonResponse
+from django.urls import reverse
+from django.utils.translation import gettext as _
 from django.views.generic import TemplateView, DetailView, CreateView
+from throttle.decorators import throttle
+from django.utils.decorators import method_decorator
 from .models import Sector, Region, Content, ContactForNewLetter
 from .forms import ContactForm, NewLetterForm
 from blog.models import Article
@@ -45,36 +49,32 @@ class RegionView(DetailView):
         return super().get_object(queryset)
 
 
-class ContactView(CreateView):
-    form_class = ContactForm
-    template_name = "vitrine/contact.html"
+def get_contact_view(request):
+    form = ContactForm()
+    return render(request, "vitrine/contact.html", {"form": form})
 
-    def get_success_url(self):
-        from django.urls import reverse
-        success_url = reverse("vitrine:home")
-        return success_url
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
-
-    def form_valid(self, form):
-        form.save()
-        return HttpResponseRedirect(self.get_success_url())
+@throttle(zone="contact")
+def post_contact_view(request):
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse("vitrine:home"))
+    else:
+        return redirect(reverse("vitrine:contact"))
 
 
 def subscribe_newsletter_ajax(request):
-    print(request.method)
+    errors = None
+    message = None
     if request.method == "POST":
         form = NewLetterForm(request.POST)
-        print("--------------------------------------")
-        print(request.POST)
-        print("-----------------------")
         if form.is_valid():
             email = form.cleaned_data["email"]
             ContactForNewLetter.objects.get_or_create(email=email)
-            errors = None
+            message = _("Ajout à la newsletter réussi")
         else:
             errors = form.errors
 
-        return JsonResponse({"errors": errors})
+        return JsonResponse({"errors": errors, "message": message})

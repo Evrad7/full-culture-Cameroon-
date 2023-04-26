@@ -8,7 +8,7 @@ class CommentAdminForm(forms.ModelForm):
         fields = ["author", "content"]
         model = Comment
         widgets = {
-            "content": forms.Textarea()
+            "content": forms.Textarea(attrs={"cols": 70, "rows": 5})
         }
 
 

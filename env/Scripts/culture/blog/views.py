@@ -3,6 +3,7 @@ from django.http import JsonResponse
 from django.db.models import Q
 import operator
 from django.views.generic import ListView, DetailView
+from throttle.decorators import throttle
 from functools import reduce
 from .models import Article
 from .forms import CommentForm
@@ -52,6 +53,7 @@ class Articleview(DetailView):
         return context
 
 
+@throttle(zone="comment")
 def add_comment_ajax(request):
     errors = None
     comment = None

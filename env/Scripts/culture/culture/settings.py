@@ -139,6 +139,9 @@ LANGUAGES = (
 LOCALE_PATHS = [
     BASE_DIR.joinpath("locale")
 ]
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = "fr"
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
@@ -223,3 +226,42 @@ MDEDITOR_CONFIGS = {
     }
 
 }
+
+THROTTLE_ZONES = {
+    'default': {
+        'VARY': 'throttle.zones.RemoteIP',
+        'ALGORITHM': 'fixed-bucket',  # Default if not defined.
+        'BUCKET_INTERVAL': 15 * 60,  # Number of seconds to enforce limit.
+        'BUCKET_CAPACITY': 15,  # Maximum number of requests allowed within BUCKET_INTERVAL
+    },
+    'comment': {
+        'VARY': 'throttle.zones.RemoteIP',
+        'ALGORITHM': 'fixed-bucket',  # Default if not defined.
+        'BUCKET_INTERVAL': 3600 * 60,  # Number of seconds to enforce limit.
+        'BUCKET_CAPACITY': 50,  # Maximum number of requests allowed within BUCKET_INTERVAL
+    },
+    'contact': {
+        'VARY': 'throttle.zones.RemoteIP',
+        'ALGORITHM': 'fixed-bucket',  # Default if not defined.
+        'BUCKET_INTERVAL': 3600 * 60,  # Number of seconds to enforce limit.
+        'BUCKET_CAPACITY': 10,  # Maximum number of requests allowed within BUCKET_INTERVAL
+    },
+    'newsletter': {
+        'VARY': 'throttle.zones.RemoteIP',
+        'ALGORITHM': 'fixed-bucket',  # Default if not defined.
+        'BUCKET_INTERVAL': 3600 * 60,  # Number of seconds to enforce limit.
+        'BUCKET_CAPACITY': 50,  # Maximum number of requests allowed within BUCKET_INTERVAL
+    },
+}
+
+# Where to store request counts.
+THROTTLE_BACKEND = 'throttle.backends.cache.CacheBackend'
+
+# Optional if Redis backend is chosen ('throttle.backends.redispy.RedisBackend')
+THROTTLE_REDIS_HOST = 'localhost'
+THROTTLE_REDIS_PORT = 6379
+THROTTLE_REDIS_DB = 0
+THROTTLE_REDIS_AUTH = 'pass'
+
+# Normally, throttling is disabled when DEBUG=True. Use this to force it to enabled.
+THROTTLE_ENABLED = True
