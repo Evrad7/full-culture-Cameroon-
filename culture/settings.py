@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-p0zk)7_1lwsl!p%ccacq)efn9%aj^owdiq$+u^qi0n*ln3jee#
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "cameroon-culture.herokuapp.com"
+    "cameroon-culture.herokuapp.com",
 ]
 
 
