@@ -158,7 +158,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 MEDIA_ROOT = '/media/'
 MEDIA_URL = '/media/'
 STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR.joinpath("static")
+STATIC_ROOT = BASE_DIR.joinpath("static_files")
 
 LANGUAGE_CODE = 'fr-fr'
 
