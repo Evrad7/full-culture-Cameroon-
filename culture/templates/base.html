@@ -11,7 +11,7 @@
         {% compress css%}
             <link  type="text/x-scss" charset="utf-8"  rel="stylesheet" href="{% static 'scss/style.scss' %}">
             <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
-            <link rel="stylesheet" type="text/css" href="{% static 'node_modules/bootstrap-icons/font/bootstrap-icons.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-icons/font/bootstrap-icons.css' %}">
             {% block css %}
             {% endblock css %}
         {% endcompress %}
@@ -88,7 +88,7 @@
             </footer>
         {% compress js %}
           <script type="text/javascript" src="{% static 'node_modules/scrollreveal/dist/scrollreveal.min.js' %}"></script>
-          <script type="text/javascript" src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+          <script type="text/javascript" src="{% static 'bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
           <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
 
           {% block js %}

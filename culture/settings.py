@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "cameroon-culture.herokuapp.com",
+    "127.0.0.1",
 ]
 
 
@@ -193,8 +194,7 @@ STATICFILES_FINDERS = [
 ]
 
 STATICFILES_DIRS = [
-    "culture/static",
-
+    "node_modules",
 ]
 
 MDEDITOR_CONFIGS = {
