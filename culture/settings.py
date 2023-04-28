@@ -194,7 +194,7 @@ STATICFILES_FINDERS = [
 ]
 
 STATICFILES_DIRS = [
-    "node_modules",
+    BASE_DIR.joinpath("node_modules")
 ]
 
 MDEDITOR_CONFIGS = {
