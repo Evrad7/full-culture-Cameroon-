@@ -1,8 +1,8 @@
 
 import dj_database_url
 from culture.settings import *
-# DEBUG=False
-# TEMPLATE_DEBUG=False
+DEBUG = False
+TEMPLATE_DEBUG = False
 ALLOWED_HOSTS = [
     "cameroon-culture.herokuapp.com",
     "127.0.0.1",
