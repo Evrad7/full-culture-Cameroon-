@@ -11,7 +11,7 @@
     {% block content %}
     {% include "navbar.html" with active=1 %}
     <div class="d-flex bg-warning justify-content-between overflow-hidden">
-      <div class="flex-grow-1 ps-4  py-2 d-flex flex-column align-items-center justify-content-center position-relative">
+      <div class="flex-grow-1 ps-4  py-2 d-flex flex-column align-items-center justify-content-center position-relative scrollreveal-home-text">
         <div class="mb-1 links">
           {% for link in company.links.all %}
             <a href="{{link.link}}" class="link-light"><i class="bi {{link.icon_class}} fs-4 me-2"></i></a>
@@ -21,9 +21,9 @@
           <div class="separator-bar my-1 my-sm-2 my-md-5"></div>
           <h2 class="text-light fst-italic text-center">{{company.slogan}}</h2>
       </div>
-      <img src="{% static 'img/home.png' %}"  class="img-fluid home" alt="La culture camerounaise">
+      <img src="{% static 'img/home.png' %}"  class="img-fluid home scrollreveal-home-img" alt="La culture camerounaise">
     </div>
-    <p class="text-secondary text-center fs-5 my-4 mx-1 px-0 mx-md-5 px-md-5" >{{company.description}}</p>
+    <p class="text-secondary text-center fs-5 my-4 mx-1 px-0 mx-md-5 px-md-5 scrollreveal-text" >{{company.description}}</p>
       {% for content in contents %}
         {%  if content.pattern_content_home_page.id == "images_left-text_right" %}
         <div class="row my-5 p-1" style="background-color: #383333;">
@@ -41,7 +41,7 @@
                   {{content.body|truncatewords:100}}
                 </p>
                 <div class="text-end me-0 me-lg-3">
-                  <a href="" class="btn text-warning  btn-transparent border-secondary border-end-0 border-start-0 d-inline-flex align-items-center btn-arrow">
+                  <a href="{{content.get_absolute_url}}#{{content.title}}-{{content.id}}" class="btn text-warning  btn-transparent border-secondary border-end-0 border-start-0 d-inline-flex align-items-center btn-arrow">
                     <span class="fst-italic">{% translate 'En savoir plus' %}</span> <i class="ms-2 bi bi-arrow-right fs-4"></i>
                   </a>
               </div>
@@ -52,7 +52,7 @@
           <div class="my-5">
             <div class="img-separator overflow-hidden mb ">
             </div>
-            <h1 class="text-primary text-center fst-italic">{{content.title}}</h1>
+            <h1 class="text-primary text-center fst-italic scrollreveal-text">{{content.title}}</h1>
             <div class="glider-contain position-relative  scrollreveal-img">
               <div class="glider overflow-hidden" id="glider-{{forloop.counter}}">
                 {% for media in content.mediacontent_set.all %}
@@ -68,28 +68,28 @@
               <button aria-label="Next" class="glider-next glider-next-{{forloop.counter}}" ><i class="bi bi-chevron-right fs-1 text-light"  ></i></button>
               <div role="tablist" class="dots"></div>
             </div>
-            <div class="text-end mt-3 pe-1 pe-sm-5">
-              <a href="" class="btn text-success  btn-transparent border-secondary border-end-0 border-start-0 d-inline-flex align-items-center btn-arrow">
+            <div class="text-end mt-3 pe-1 pe-sm-5  scrollreveal-text">
+              <a href="{{content.get_absolute_url}}#{{content.title}}-{{content.id}}" class="btn text-success  btn-transparent border-secondary border-end-0 border-start-0 d-inline-flex align-items-center btn-arrow">
                 <span class="fst-italic">{% translate 'En savoir plus sur les photos' %} </span> <i class="ms-2 bi bi-arrow-right fs-4"></i>
               </a>
           </div>
           </div>
         {% elif content.pattern_content_home_page.id == "images_right-text_left" %}
         <div class="px-1 ps-sm-3">
-          <div class="mt-5 mx-3 d-sm-flex d-inline-block mb-3">
+          <div class="mt-5 mx-3 d-sm-flex d-inline-block mb-3   scrollreveal-text">
             <div class="d-inline">
               <div class="point bg-primary d-inline-block me-1  me-sm-4 mt-4" >
               </div>
             </div>
             <h1 class="text-primary d-inline fst-italic">{{content.title}}.</h1>
           </div>
-          <div class="row">
-            <div class="col-12 col-md-6 order-2 order-md-1 d-flex flex-column align-items-center justify-content-center scrollreveal-text">
+          <div class="row  scrollreveal-text">
+            <div class="col-12 col-md-6 order-2 order-md-1 d-flex flex-column align-items-center justify-content-center">
               <p class="fs-5 text-center text-secondary">
                 {{content.body|truncatewords:100}}
               </p>
-              <div>
-                  <a href="" class="btn text-success  btn-transparent border-secondary border-end-0 border-start-0 d-flex align-items-center btn-arrow">
+              <div class="scrollreveal-text">
+                  <a href="{{content.get_absolute_url}}#{{content.title}}-{{content.id}}" class="btn text-success  btn-transparent border-secondary border-end-0 border-start-0 d-flex align-items-center btn-arrow ">
                     <span class="fst-italic">{% translate 'En savoir plus' %}</span> <i class="ms-2 bi bi-arrow-right fs-4"></i>
                   </a>
               </div>
@@ -125,13 +125,13 @@
                 {% with medias=content.mediacontent_set.all %}
                 <div class="">
                   <div class="d-flex justify-content-end">
-                    <div class="img">
+                    <div class="img scrollreveal-img">
                       <img src="{{medias.0.image.url}}" class="img-fluid d-block mt-5"  alt="{{medias.0.image.default_alt_text}}">
                       <span>@:{{medias.0.image.author}}</span>
                     </div>                      
                   </div>
-                  <div class="d-flex justify-content-end">
-                    <div class="img">
+                  <div class="d-flex justify-content-end scrollreveal-img">
+                    <div class="img scrollreveal-img">
                       <img src="{{medias.1.image.url}}"  class="img-fluid d-block"  alt="{{medias.1.image.default_alt_text}}">
                       <span>@:{{medias.1.image.author}}</span>
                     </div>
@@ -139,13 +139,13 @@
                 </div>
                 <div class="">
                   <div class="d-flex justify-content-start">
-                    <div class="img">
+                    <div class="img scrollreveal-img">
                       <img src="{{medias.2.image.url}}"   class="img-fluid d-block"  alt="{{medias.2.image.default_alt_text}}">
                       <span>@:{{medias.2.image.author}}</span>
                     </div>
                   </div>
                   <div class="d-flex justify-content-start">
-                    <div class="img">
+                    <div class="img scrollreveal-img">
                       <img src="{{medias.3.image.url}}"  class="img-fluid d-block"alt="{{medias.3.image.default_alt_text}}">
                       <span>@:{{medias.3.image.author}}</span>
                     </div>
@@ -157,9 +157,9 @@
            
             </div>
           </div>
-          <div class="text-center mt-3">
-            <a href="" class="btn text-success  btn-transparent border-secondary border-end-0 border-start-0 d-inline-flex align-items-center btn-arrow">
-              <span class="fst-italic">{% translate 'En savoir plus' %}</span> <i class="ms-2 bi bi-arrow-right fs-4"></i>
+          <div class="text-center mt-3 scrollreveal-text">
+            <a href="{{content.get_absolute_url}}#{{content.title}}-{{content.id}}" class="btn text-success  btn-transparent border-secondary border-end-0 border-start-0 d-inline-flex align-items-center btn-arrow">
+              <span class="fst-italic ">{% translate 'En savoir plus' %}</span> <i class="ms-2 bi bi-arrow-right fs-4"></i>
             </a>
         </div>
         </div>
@@ -170,7 +170,7 @@
               <div class="point bg-primary d-inline-block me-1  me-sm-4 mt-4" >
               </div>
             </div>
-            <h1 class="text-primary d-inline fst-italic">{{content.title}}.</h1>
+            <h1 class="text-primary d-inline fst-italic scrollreveal-text">{{content.title}}.</h1>
           </div>
           <div class="text-center mx-1 scrollreveal-img">
             {% for media in content.mediacontent_set.all %}
@@ -183,9 +183,9 @@
           <p class="fs-5 text-secondary mt-5 scrollreveal-text">
             {{content.body|truncatewords:100}}
           </p>
-          <div class="text-center mb-3">
-            <a href="" class="btn text-success  btn-transparent border-secondary border-end-0 border-start-0 d-inline-flex align-items-center btn-arrow scrollreveal-text">
-              <span class="fst-italic">{% translate 'En savoir plus' %}</span> <i class="ms-2 bi bi-arrow-right fs-4"></i>
+          <div class="text-center mb-3 scrollreveal-text">
+            <a href="{{content.get_absolute_url}}#{{content.title}}-{{content.id}}" class="btn text-success  btn-transparent border-secondary border-end-0 border-start-0 d-inline-flex align-items-center btn-arrow scrollreveal-text">
+              <span class="fst-italic ">{% translate 'En savoir plus' %}</span> <i class="ms-2 bi bi-arrow-right fs-4"></i>
             </a>
         </div>
         
@@ -196,35 +196,32 @@
    
      
       <div>
-        <div class="mt-5 mx-3 d-sm-flex d-inline-block mb-3">
+        <div class="mt-5 mx-3 d-sm-flex d-inline-block mb-3  scrollreveal-text">
           <div class="d-inline">
             <div class="point bg-primary d-inline-block me-1  me-sm-4  mt-4" >
             </div>
           </div>
           <h1 class="text-primary d-inline fst-italic">{% translate 'Les articles les plus consultés' %}.</h1>
         </div>
-        <div class="d-flex justify-content-center  mt-5 flex-wrap ">
-          
+        <div class="d-flex justify-content-center  mt-5 flex-wrap">
           <div class="d-flex">
-            <div class="vertical-separator  d-block d-md-none">
+            <div class="vertical-separator  d-block d-md-none scrollreveal-img ms-1">
               <div class="vertical-upper-separator bg-primary mt-3">
-
               </div>
               <div class="point bg-primary"></div>
               <div class="vertical-lower-separator bg-primary ">
-
               </div>
             </div>
             <div>
               {% if articles.0 is not None %}
                 <div class="card bg-transparent mb-5" style="max-width:25rem;">
-                  <div class="px-2">
-                    <div class="img w-100">
+                  <div class="px-2 scrollreveal-img">
+                    <div class="img w-100 ">
                       <img src="{{articles.0.image.url}}" class="card-img-top img-fluid border rounded-0" alt="{{articles.0.image.default_alt_text}}">
                       <span>@:{{articles.0.image.author}}</span>
                     </div>
                   </div>
-                  <div class="card-body">
+                  <div class="card-body scrollreveal-text">
                     <h5 class="card-title  fst-italic text-center">{{articles.0.title}}</h5>
                     <p class="card-text text-secondary">{{articles.0.summary|truncatewords:50}}</p>
                     <div class="text-center">
@@ -235,14 +232,14 @@
               {% endif %}
               {% if articles.1 is not None %}
               <div class="card bg-transparent" style="max-width:25rem;">
-                <div class="px-2">
+                <div class="px-2 scrollreveal-img">
                   <div class="img w-100">
                     <img src="{{articles.1.image.url}}" class="card-img-top img-fluid rounded-0" alt="{{articles.1.image.default_alt_text}}">
                     <span>@:{{articles.1.image.author}}</span>
                   </div>
                   
                 </div>
-                <div class="card-body">
+                <div class="card-body scrollreveal-text">
                   <h5 class="card-title  fst-italic text-center">{{articles.1.title}}</h5>
                   <p class="card-text text-secondary">{{articles.1.summary|truncatewords:50}}</p>
                   <div class="text-center">
@@ -253,18 +250,16 @@
               {% endif %}
             </div>
           </div>
-          <div class="vertical-separator  mx-md-1 mx-lg-5 d-none d-md-block">
+          <div class="vertical-separator  mx-md-1 mx-lg-5 d-none d-md-block scrollreveal-img">
             <div class="vertical-upper-separator bg-primary mt-3">
-
             </div>
             <div class="point bg-primary"></div>
             <div class="vertical-lower-separator bg-primary ">
-
             </div>
           </div>
       
           <div class="d-flex justify-content-between">
-            <div class="vertical-separator  d-block d-md-none">
+            <div class="vertical-separator  d-block d-md-none scrollreveal-img ms-1">
               <div class="vertical-upper-separator bg-primary mt-3">
 
               </div>
@@ -276,13 +271,13 @@
             <div>
               {% if articles.2 is not None %}
                 <div class="card bg-transparent mb-5" style="max-width:25rem;">
-                  <div class="px-2">
+                  <div class="px-2 scrollreveal-img">
                     <div class="img w-100">
                       <img src="{{articles.2.image.url}}" class="card-img-top img-fluid rounded-0" alt="{{articles.2.image.default_alt_text}}">
                       <span>@:{{articles.2.image.author}}</span>
                     </div>
                   </div>
-                  <div class="card-body">
+                  <div class="card-body scrollreveal-text">
                     <h5 class="card-title  fst-italic text-center">{{articles.2.title}}</h5>
                     <p class="card-text text-secondary">{{articles.2.summary|truncatewords:50}}</p>
                     <div class="text-center">
@@ -293,13 +288,13 @@
               {% endif %}
               {% if articles.3 is not None %}
                 <div class="card bg-transparent" style="max-width:25rem;">
-                  <div class="px-2">
+                  <div class="px-2 scrollreveal-img">
                     <div class="img w-100">
                       <img src="{{articles.3.image.url}}" class="card-img-top img-fluid rounded-0" alt="{{articles.3.image.default_alt_text}}">
                       <span>@:{{articles.3.image.author}}</span>
                     </div>    
                   </div>
-                  <div class="card-body">
+                  <div class="card-body scrollreveal-text">
                     <h5 class="card-title  fst-italic text-center">{{articles.3.title}}</h5>
                     <p class="card-text text-secondary">{{articles.3.summary|truncatewords:50}}</p>
                     <div class="text-center">
@@ -312,7 +307,7 @@
        
           </div>
         </div>
-        <div class="d-flex justify-content-center align-items-center my-4">
+        <div class="d-flex justify-content-center align-items-center my-4 scrollreveal-text">
             <a href="{% url 'blog:articles' %}" class="btn btn-dark fst-italic">{% translate "Plus d'articles" %}</a>
         </div>
       </div>

@@ -153,6 +153,10 @@ class Content(models.Model):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        from django.urls import reverse
+        return reverse("vitrine:sector", kwargs={"slug": self.sector.slug})
+
     class Meta:
         verbose_name = _("contenu statique")
         verbose_name_plural = _("contenus statiques")

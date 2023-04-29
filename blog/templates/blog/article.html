@@ -14,7 +14,7 @@
         <span>@:{{article.banner.author}}</span>
     </div>
     <div class="container mb-5">
-      <h1 class="text-primary fst-italic mb-4">{{article.title}}</h1>
+      <h1 class="text-primary fst-italic mb-4 scrollreveal-text">{{article.title}}</h1>
         <div class="row justify-content-between mx-1">
           <div class="content col-12 col-lg-9 order-2 order-lg-1 d-flex ">
             <div class="vertical-separator me-1 me-md-5">
@@ -46,8 +46,8 @@
               
   
               </div>
-          </form>
-           </div>
+            </form>
+          </div>
           </div>
         </div>
        
@@ -79,10 +79,10 @@
       </div>
     
       <div class="my-5">
-        <h1 class="text-primary fst-italic">{% translate 'Ceci pourrait vous interessez' %}</h1>
+        <h1 class="text-primary fst-italic scrollreveal-text">{% translate 'Ceci pourrait vous interessez' %}</h1>
         <div class=" container articles mt-5">
           {% for article in articles %}
-            <div class="border-top border-secondary border-2 row align-items-start align-items-lg-center  justify-content-between pt-3 pt-md-4 mb-4 mx-1">
+            <div class="border-top border-secondary border-2 row align-items-start align-items-lg-center  justify-content-between pt-3 pt-md-4 mb-4 mx-1 scrollreveal-text">
               <div class="col-4 col-lg-2 align-self-start text-center">
                 <img src="{{article.image.url}}" alt="culture ouest cameroun" class="img-fluid">
               </div>

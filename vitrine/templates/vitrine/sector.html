@@ -14,62 +14,62 @@
     <div class="img-separator overflow-hidden mb ">
     </div>
       <h1 class="container">
-          <span class="text-primary d-block ">{{sector.name}}</span> 
-          <span class="text-success text-center d-block ">du Cameroun</span>
+          <span class="text-primary d-block scrollreveal-home-text">{{sector.name}}</span> 
+          <span class="text-success text-center d-block scrollreveal-home-img ">du Cameroun</span>
       </h1>
     <div class="img-separator overflow-hidden mb ">
     </div>
     {% for content in sector.content_set.all %}
       {% if content.pattern_content_others_pages.id == "carousel_top-text_bottom" %}
-        <div class="my-5">
-          <h2 class=" text-primary fst-italic container">{{content.title}}</h2>
+        <div class="my-5" id="{{content.title}}-{{content.id}}">
+          <h2 class=" text-primary fst-italic container scrollreveal-text">{{content.title}}</h2>
           <div class="glider-contain position-relative">
             <div class="glider overflow-hidden" id="glider-{{forloop.counter}}">
               {% for media in content.mediacontent_set.all %}
                 <div class="me-1 me-sm-2 me-md-4">
-                  <div class="img">
+                  <div class="img scrollreveal-img">
                     <img src="{{media.image.url}}" class=""  alt="{{media.image.default_alt_text}}">
                     <span>@:{{media.image.author}}</span>
                   </div>
                 </div>
               {% endfor %}
             </div>
-            <button aria-label="Previous" class="glider-prev glider-prev-{{forloop.counter}}"><i class="bi bi-chevron-left text-light fs-1"></i></button>
-            <button aria-label="Next" class="glider-next glider-next-{{forloop.counter}}"><i class="bi bi-chevron-right fs-1 text-light"  ></i></button>
+            <button aria-label="Previous" class="glider-prev glider-prev-{{forloop.counter}} scrollreveal-home-text"><i class="bi bi-chevron-left text-light fs-1"></i></button>
+            <button aria-label="Next" class="glider-next glider-next-{{forloop.counter}} scrollreveal-home-img"><i class="bi bi-chevron-right fs-1 text-light"  ></i></button>
             <div role="tablist" class="dots"></div>
           </div>
-          <p class="fs-5 container text-secondary my-5">
+          <p class="fs-5 container text-secondary my-5 scrollreveal-text">
           {{content.body|linebreaksbr}}
           </p>
         </div>
         {% elif content.pattern_content_others_pages.id == "images_top-text_bottom" %}
-          <div class="container my-5">
-            <h2 class="text-primary fst-italic">{{content.title}} </h2>
+          <div class="container my-5" id="{{content.title}}-{{content.id}}">
+            <h2 class="text-primary fst-italic scrollreveal-text">{{content.title}} </h2>
             <div class="text-center mx-1">
               {% for media in content.mediacontent_set.all %}
-              <div class="img">
+              <div class="img scrollreveal-img">
                 <img src="{{media.image.url}}" class="img-fluid" alt="{{media.image.default_alt_text}}">
                 <span>@:{{media.image.author}}</span>
               </div>
               {% endfor %}
             </div>
-            <p class="fs-5 text-secondary my-5">
+            <p class="fs-5 text-secondary my-5 scrollreveal-text">
               {{content.body|linebreaksbr}}
             </p>
           
         </div>
         {% elif content.pattern_content_others_pages.id == "images_right-text_left" %}
-          <div class="container my-5">
-            <h2 class="text-primary fst-italic">{{content.title}} </h2>
+          <div class="container my-5" id="{{content.title}}-{{content.id}}">
+            <h2 class="text-primary fst-italic scrollreveal-text">{{content.title}} </h2>
             <div class="row justify-content-between">
               <div class="col-12 col-md-6 col-lg-8 order-2 order-md-1">
-                <p class="fs-5 text-secondary my-2 my-md-5">
+                <p class="fs-5 text-secondary my-2 my-md-5 scrollreveal-text">
                   {{content.body|linebreaksbr}}
                 </p>
               </div>
               <div class="col-12 col-md-6 order-1  col-lg-4 order-md-2 pt-5 text-center">
                 {% for media in content.mediacontent_set.all %}
-                <div class="img">
+                <div class="img scrollreveal-img">
                   <span>@:{{media.image.author}}</span>
                   <img src="{{media.image.url}}" class="img-fluid" alt="{{media.image.default_alt_text}}" style="max-height: 500px;">
                 </div>
@@ -79,19 +79,19 @@
             
           </div>
         {% elif content.pattern_content_others_pages.id == "images_left-text_right" %}
-          <div class="container my-5">
-            <h2 class="text-primary fst-italic">{{content.title}} </h2>
+          <div class="container my-5" id="{{content.title}}-{{content.id}}">
+            <h2 class="text-primary fst-italic scrollreveal-text">{{content.title}} </h2>
             <div class="row justify-content-between">
               <div class="col-12 col-md-6  col-lg-4  pt-5 text-center">
                 {% for media in content.mediacontent_set.all %}
-                <div class="img">
+                <div class="img scrollreveal-img">
                   <span>@:{{media.image.author}}</span>
                   <img src="{{media.image.url}}" class="img-fluid" alt="{{media.image.default_alt_text}}" style="max-height: 500px;">
                 </div>
                 {% endfor %}
               </div>
               <div class="col-12 col-md-6 col-lg-8 ">
-                <p class="fs-5 text-secondary my-2 my-md-5">
+                <p class="fs-5 text-secondary my-2 my-md-5 scrollreveal-text">
                   {{content.body|linebreaksbr}}
                 </p>
               </div>
@@ -100,17 +100,17 @@
             
           </div>
         {% elif content.pattern_content_others_pages.id == "text_top-image_in_frame" %}
-          <div class="container my-5">
+          <div class="container my-5" id="{{content.title}}-{{content.id}}">
             <div class="mt-5 mx-3 d-sm-flex d-inline-block mb-3">
               <div class="d-inline">
                 <div class="point bg-primary d-inline-block me-1  me-sm-4 mt-4" >
                 </div>
               </div>
-              <h1 class="text-primary d-inline fst-italic">{{content.title}}</h1>
+              <h1 class="text-primary d-inline fst-italic scrollreveal-text">{{content.title}}</h1>
             </div>
             <div class="row">
               <div class="">
-                <p class="text-secondary fs-5">{{content.body|linebreaksbr}}</p>
+                <p class="text-secondary fs-5 scrollreveal-text">{{content.body|linebreaksbr}}</p>
               </div>
               <div class="d-flex justify-content-center align-items-center">
                 <div class="col-0 col-md-2"></div>
@@ -118,13 +118,13 @@
                   {% with medias=content.mediacontent_set.all %}
                   <div class="">
                     <div class="d-flex justify-content-end">
-                      <div class="img">
+                      <div class="img scrollreveal-img">
                         <img src="{{medias.0.image.url}}" class="img-fluid d-block mt-5"  alt="{{medias.0.image.default_alt_text}}">
                         <span>@:{{medias.0.image.author}}</span>
                       </div>                      
                     </div>
                     <div class="d-flex justify-content-end">
-                      <div class="img">
+                      <div class="img scrollreveal-img">
                         <img src="{{medias.1.image.url}}"  class="img-fluid d-block"  alt="{{medias.1.image.default_alt_text}}">
                         <span>@:{{medias.1.image.author}}</span>
                       </div>
@@ -132,13 +132,13 @@
                   </div>
                   <div class="">
                     <div class="d-flex justify-content-start">
-                      <div class="img">
+                      <div class="img scrollreveal-img">
                         <img src="{{medias.2.image.url}}"   class="img-fluid d-block"  alt="{{medias.2.image.default_alt_text}}">
                         <span>@:{{medias.2.image.author}}</span>
                       </div>
                     </div>
                     <div class="d-flex justify-content-start">
-                      <div class="img">
+                      <div class="img scrollreveal-img">
                         <img src="{{medias.3.image.url}}"  class="img-fluid d-block"alt="{{medias.3.image.default_alt_text}}">
                         <span>@:{{medias.3.image.author}}</span>
                       </div>
@@ -155,7 +155,7 @@
     
       {% endif %}
       {% if not  forloop.last %}
-          <div class="d-flex align-items-center container my-5">
+          <div class="d-flex align-items-center container my-5 scrollreveal-img">
             <div class="point bg-success d-inline-block me-1  me-sm-4 " >
             </div>
             <div class="horizontal-separator bg-success w-100">
