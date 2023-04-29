@@ -16,7 +16,7 @@ MIDDLEWARE = [
     PRE_MIDDLEWARE[0],
     "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
-MIDDLEWARE.append(PRE_MIDDLEWARE[2:])
+MIDDLEWARE.extend(PRE_MIDDLEWARE[2:])
 
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
