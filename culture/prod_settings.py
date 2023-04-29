@@ -11,12 +11,16 @@ ALLOWED_HOSTS = [
 SECRET_KEY = '*&zegul5y2+ho#w#2=xl3!)&1zhz5d$u8#%8o*a8q^=-1agf50'
 DATABASES["default"] = dj_database_url.config()
 
-PRE_MIDDLEWARE = MIDDLEWARE
 MIDDLEWARE = [
-    PRE_MIDDLEWARE[0],
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    'django.middleware.security.SecurityMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    "django.middleware.locale.LocaleMiddleware",
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-MIDDLEWARE.extend(PRE_MIDDLEWARE[2:])
-
-
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
