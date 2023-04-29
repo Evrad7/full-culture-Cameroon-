@@ -67,7 +67,6 @@ nav ul li.nav-item a.nav-link:after, .footer div a:after{
   
   
 .body{
-    @import url("../fonts/LibreBaskerville-Regular.ttf");
     background-color: var(--bg);
     font-family: 'Libre Baskerville', serif;
     overflow-x: hidden;
