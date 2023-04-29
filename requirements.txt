@@ -58,3 +58,4 @@ urllib3==1.26.15
 virtualenv==20.14.1
 webencodings==0.5.1
 Werkzeug==2.2.3
+whitenoise==6.4.0
