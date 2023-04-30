@@ -17,10 +17,10 @@ django-filer==2.2.4
 django-js-asset==2.0.0
 django-libsass==0.9
 django-markdowny==0.2.4
-django-mdeditor==0.1.20
 django-modeltranslation==0.18.9
 django-mptt==0.14.0
 django-polymorphic==3.1.0
+django-quill-editor==0.1.40
 django-rosetta==0.9.9
 django-storages==1.13.2
 django-throttle-requests==0.7.0
