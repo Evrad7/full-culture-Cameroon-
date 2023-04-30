@@ -1,5 +1,5 @@
 from django.contrib import admin
-from modeltranslation.admin import TranslationAdmin
+from modeltranslation.admin import TabbedTranslationAdmin
 from .models import Comment, Article, Tag
 from .forms import CommentAdminForm
 
@@ -18,7 +18,7 @@ class CommentInline(admin.TabularInline):
     extra = 1
 
 
-class ArticleAdmin(TranslationAdmin):
+class ArticleAdmin(TabbedTranslationAdmin):
     fields = ["sector", "banner", "image", "title",  "summary",
               "published", "content"]
     list_display = ["title", "summary", "published"]
@@ -29,7 +29,7 @@ class ArticleAdmin(TranslationAdmin):
 
 
 @admin.register(Article)
-class TranslationArticleAdmin(ArticleAdmin, TranslationAdmin):
+class TranslationArticleAdmin(ArticleAdmin, TabbedTranslationAdmin):
     pass
 
 
