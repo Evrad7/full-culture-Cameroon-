@@ -121,6 +121,8 @@ class SocialLink(models.Model):
     name = models.CharField(max_length=30, unique=True, verbose_name=_("nom"))
     link = models.URLField(max_length=100, unique=True,
                            verbose_name=_("lien"), null=True, blank=True)
+    icon_class = models.CharField(
+        max_length=30, verbose_name=_("classe css de l'icon"))
     company = models.ForeignKey(
         to="Company", on_delete=models.CASCADE, blank=True, related_name="links")
 
