@@ -2,7 +2,6 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
-import mdeditor.fields
 
 
 class Migration(migrations.Migration):
@@ -16,7 +15,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Article',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('slug', models.SlugField(max_length=30)),
                 ('title', models.CharField(max_length=30)),
                 ('summary', models.TextField(max_length=10, null=True)),
@@ -24,13 +24,14 @@ class Migration(migrations.Migration):
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('published_at', models.DateTimeField(blank=True, null=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
-                ('content', mdeditor.fields.MDTextField()),
+                ('content', models.TextField()),
             ],
         ),
         migrations.CreateModel(
             name='Tag',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('slug', models.SlugField(max_length=30)),
                 ('title', models.CharField(max_length=30)),
             ],
@@ -38,10 +39,12 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Comment',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('content', models.TextField(max_length=450)),
-                ('article', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='blog.article')),
+                ('article', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to='blog.article')),
             ],
         ),
         migrations.AddField(

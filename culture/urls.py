@@ -27,7 +27,6 @@ urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
     path("blog/", include(("blog.urls", "blog"))),
     path("", include(("vitrine.urls", "vitrine"))),
-    path("mdeditor/", include("mdeditor.urls")),
     path("file/", include("filer.urls")),
 )
 

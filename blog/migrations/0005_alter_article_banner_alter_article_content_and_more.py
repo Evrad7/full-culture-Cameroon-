@@ -4,7 +4,6 @@ from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
 import filer.fields.image
-import mdeditor.fields
 
 
 class Migration(migrations.Migration):
@@ -19,37 +18,43 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='article',
             name='banner',
-            field=filer.fields.image.FilerImageField(null=True, on_delete=django.db.models.deletion.SET_NULL, to=settings.FILER_IMAGE_MODEL, verbose_name='image bannière'),
+            field=filer.fields.image.FilerImageField(
+                null=True, on_delete=django.db.models.deletion.SET_NULL, to=settings.FILER_IMAGE_MODEL, verbose_name='image bannière'),
         ),
         migrations.AlterField(
             model_name='article',
             name='content',
-            field=mdeditor.fields.MDTextField(verbose_name="contenu de l'article"),
+            field=models.TextField(verbose_name="contenu de l'article"),
         ),
         migrations.AlterField(
             model_name='article',
             name='created_at',
-            field=models.DateTimeField(auto_now_add=True, verbose_name='date de création'),
+            field=models.DateTimeField(
+                auto_now_add=True, verbose_name='date de création'),
         ),
         migrations.AlterField(
             model_name='article',
             name='published',
-            field=models.BooleanField(blank=True, default=False, verbose_name='est publié'),
+            field=models.BooleanField(
+                blank=True, default=False, verbose_name='est publié'),
         ),
         migrations.AlterField(
             model_name='article',
             name='published_at',
-            field=models.DateTimeField(blank=True, null=True, verbose_name='date de publication'),
+            field=models.DateTimeField(
+                blank=True, null=True, verbose_name='date de publication'),
         ),
         migrations.AlterField(
             model_name='article',
             name='section',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='vitrine.section', verbose_name='secteur'),
+            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL,
+                                    to='vitrine.section', verbose_name='secteur'),
         ),
         migrations.AlterField(
             model_name='article',
             name='summary',
-            field=models.TextField(max_length=10, null=True, verbose_name='résumé'),
+            field=models.TextField(
+                max_length=10, null=True, verbose_name='résumé'),
         ),
         migrations.AlterField(
             model_name='article',
@@ -64,7 +69,8 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='article',
             name='updated_at',
-            field=models.DateTimeField(auto_now=True, verbose_name='date de la derniere modification'),
+            field=models.DateTimeField(
+                auto_now=True, verbose_name='date de la derniere modification'),
         ),
         migrations.AlterField(
             model_name='comment',
@@ -74,7 +80,8 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='comment',
             name='created_at',
-            field=models.DateTimeField(auto_now_add=True, verbose_name='date de création'),
+            field=models.DateTimeField(
+                auto_now_add=True, verbose_name='date de création'),
         ),
         migrations.AlterField(
             model_name='tag',

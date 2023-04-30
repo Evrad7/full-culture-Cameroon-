@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
-from mdeditor.fields import MDTextField
+from django_quill.fields import QuillField
 from filer.fields.image import FilerImageField
 from vitrine.models import Sector
 
@@ -12,7 +12,8 @@ class Article(models.Model):
         null=True, on_delete=models.SET_NULL, verbose_name=_("image bannière"), related_name="article_banner")
     image = FilerImageField(
         null=True, on_delete=models.SET_NULL, verbose_name=_("image de présentation"), related_name="article_image")
-    title = models.CharField(max_length=60, verbose_name=_("titre"))
+    title = models.CharField(
+        max_length=60, verbose_name=_("titre"), unique=True)
     summary = models.TextField(null=True, verbose_name=_("résumé"))
     published = models.BooleanField(
         default=False, blank=True, verbose_name=_("publié"))
@@ -22,7 +23,7 @@ class Article(models.Model):
         null=True, blank=True, verbose_name=_("date de publication"))
     updated_at = models.DateTimeField(
         auto_now=True, blank=True, verbose_name=_("date de la derniere modification"))
-    content = MDTextField(verbose_name=_("contenu de l'article"))
+    content = QuillField(verbose_name=_("contenu de l'article"))
     sector = models.ForeignKey(
         to=Sector, null=True,  on_delete=models.SET_NULL, verbose_name=_("secteur"))
 
