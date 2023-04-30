@@ -58,3 +58,13 @@ def get_cache():
 
 
 CACHES = get_cache()
+
+INSTALLED_APPS.append("storages")
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_S3_ACCESS_KEY_ID = "AKIAXD6D5GSQD3M7QNDQ"
+AWS_S3_SECRET_ACCESS_KEY = "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"
+AWS_STORAGE_BUCKET_NAME = "cameroon-culture"
+AWS_S3_REGION_NAME = "eu-north-1"
+
+# Clé d'access = AKIAXD6D5GSQD3M7QNDQ
+# Clé d'acces sécrete=XKn488Es6iljmNc74Hg7P7QMzDISWLt1xDZxcUVr
