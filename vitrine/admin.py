@@ -21,7 +21,7 @@ class RegionAdmin(TabbedTranslationAdmin):
 
 class SocialLinkInline(admin.TabularInline):
     model = SocialLink
-    fields = ["name", "link", ]
+    fields = ["name", "link", "icon_class"]
     extra = 1
     max_num = 5
     verbose_name = "réseau social de la companie"
