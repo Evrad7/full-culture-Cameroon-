@@ -16,7 +16,7 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["contents"] = Content.objects.filter(is_in_home_page=True)
-        context["articles"] = Article.objects.all()[:4]
+        context["articles"] = Article.objects.filter(published=True)[:4]
 
         return context
 

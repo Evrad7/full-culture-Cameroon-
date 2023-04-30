@@ -12,11 +12,6 @@
    transform: scale(1.1) ;
 }
 
-.article img{
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-}
 
 .articles a i.bi{
     transition: .3s 0s ease;
