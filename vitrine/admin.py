@@ -36,10 +36,10 @@ class CompanyAdmin(TabbedTranslationAdmin):
     inlines = [SocialLinkInline]
 
     def has_add_permission(self, request) -> bool:
-        return False
+        return True
 
     def has_delete_permission(self, request, obj=None) -> bool:
-        return False
+        return True
 
 
 @admin.register(Contact)
