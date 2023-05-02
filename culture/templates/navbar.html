@@ -40,10 +40,10 @@
             <a class="nav-link text-success fw-bolder fst-italic fs-5 {% if active == 4 %}active{% endif %}" href="{% url 'blog:articles' %}">{% translate 'Blog' %}</a>
           </li>
           <li class="nav-item position-relative me-1">
-            <a class="nav-link text-success fw-bolder fst-italic fs-5 {% if active == 5 %}active{% endif %}" href="#">{% translate 'Espace reservé' %}</a>
+            <a class="nav-link text-success fw-bolder fst-italic fs-5 {% if active == 6 %}active{% endif %}" href="{% url 'vitrine:contact' %}">{% translate 'Contact' %}</a>
           </li>
           <li class="nav-item position-relative me-1">
-            <a class="nav-link text-success fw-bolder fst-italic fs-5 {% if active == 6 %}active{% endif %}" href="{% url 'vitrine:contact' %}">{% translate 'Contact' %}</a>
+            <a class="nav-link text-success fw-bolder fst-italic fs-5 {% if active == 5 %}active{% endif %}" href="#">{% translate 'Espace reservé' %}</a>
           </li>
           <li class="nav-item position-relative me-2 ms-2">
             {% get_current_language as LANGUAGE_CODE %}
