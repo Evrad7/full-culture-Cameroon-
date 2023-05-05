@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
     document.querySelectorAll(".glider").forEach(function(elt){
+        index=elt.id.split("-")[1]
              new Glider(document.querySelector("#"+elt.id), {
         slidesToShow:3,
         scrollLock:true,

@@ -6,7 +6,7 @@ urlpatterns = [
     path("sector/<slug:slug>", SectorView.as_view(), name="sector"),
     path("region/<slug:slug>", RegionView.as_view(), name="region"),
     path("contact", get_contact_view, name="contact"),
-    path("contact-post", post_contact_view, name="contact_post"),
+    path("contact-post/", post_contact_view, name="contact_post"),
     path("subscribe-newsletter/", subscribe_newsletter_ajax, name="newsletter"),
 
 ]
