@@ -11,7 +11,7 @@
     {% block content %}
     {% include "navbar.html" with active=1 %}
     <div class="d-flex bg-warning justify-content-between overflow-hidden">
-      <div class="flex-grow-1 ps-4  py-2 d-flex flex-column align-items-center justify-content-center position-relative scrollreveal-home-text">
+      <div class="flex-grow-1 ps-1 ps-sm-4  py-2 d-flex flex-column align-items-center justify-content-center position-relative scrollreveal-home-text">
         <div class="mb-1 links">
           {% for link in company.links.all %}
             <a href="{{link.link}}" class="link-light"><i class="bi {{link.icon_class}} fs-4 me-2"></i></a>
@@ -76,7 +76,7 @@
           </div>
         {% elif content.pattern_content_home_page.id == "images_right-text_left" %}
         <div class="px-1 ps-sm-3">
-          <div class="mt-5 mx-3 d-sm-flex d-inline-block mb-3   scrollreveal-text">
+          <div class="  mt-0  mt-md-5  mx-3 d-sm-flex d-inline-block mb-3   scrollreveal-text">
             <div class="d-inline">
               <div class="point bg-primary d-inline-block me-1  me-sm-4 mt-4" >
               </div>

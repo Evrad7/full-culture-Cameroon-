@@ -42,9 +42,6 @@
           <li class="nav-item position-relative me-1">
             <a class="nav-link text-success fw-bolder fst-italic fs-5 {% if active == 6 %}active{% endif %}" href="{% url 'vitrine:contact' %}">{% translate 'Contact' %}</a>
           </li>
-          <li class="nav-item position-relative me-1">
-            <a class="nav-link text-success fw-bolder fst-italic fs-5 {% if active == 5 %}active{% endif %}" href="#">{% translate 'Espace reservé' %}</a>
-          </li>
           <li class="nav-item position-relative me-2 ms-2">
             {% get_current_language as LANGUAGE_CODE %}
             {% if LANGUAGE_CODE == "en" %}
