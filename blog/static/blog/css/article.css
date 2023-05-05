@@ -48,6 +48,43 @@
 
   
 }
+@media screen and (min-width:200px){
+    .article img{
+        width:150px;
+        height:auto;
+    }
+
+}
+@media screen and (min-width:450px){
+    .article img{
+        width:300px;
+        height:auto;
+    }
+
+}
+
+@media screen and (min-width:576px){
+    .article img{
+        width:400px;
+        height:auto;
+    }
+
+}
+@media screen and (min-width:768px){
+    .article img{
+        width:500px;
+        height:auto;
+    }
+
+}
+@media screen and (min-width:992px){
+    .article img{
+        width:700px;
+        height:auto;
+    }
+
+}
+
 
 .vertical-separator .point{
     margin: 2.2rem auto;
