@@ -31,7 +31,7 @@
                 {% for media in content.mediacontent_set.all %}
                   <div class="img">
                     <img src="{{media.image.url}}" class="img-fluid"  style="max-height: 400px;" alt="{{madia.image.alt}}">
-                    <span>@:{{media.image.author}}</span>
+                    {% if media.image.author %}@: {{media.image.author}}{% endif %}
                   </div>
                 {% endfor %}
             </div>
@@ -59,7 +59,7 @@
                   <div class="me-1 me-sm-2 me-md-4">
                     <div class="img">
                       <img src="{{media.image.url}}" class=""  alt="{{media.image.default_alt_text}}">
-                      <span>@:{{media.image.author}}</span>
+                      {% if media.image.author %}@: {{media.image.author}}{% endif %}
                     </div>
                   </div>
                 {% endfor %} 
@@ -98,7 +98,7 @@
               {% for media in content.mediacontent_set.all %}
                 <div class="img">
                   <img src="{{media.image.url}}" class="img-fluid" alt="{{media.image.default_alt_text}}">
-                  <span>@:{{media.image.author}}</span>
+                  {% if media.image.author %}@: {{media.image.author}}{% endif %}
                 </div>
               {% endfor %}
             </div>
@@ -127,13 +127,13 @@
                   <div class="d-flex justify-content-end">
                     <div class="img scrollreveal-img">
                       <img src="{{medias.0.image.url}}" class="img-fluid d-block mt-5"  alt="{{medias.0.image.default_alt_text}}">
-                      <span>@:{{medias.0.image.author}}</span>
+                      {% if medias.0.image.author %}@: {{medias.0.image.author}}{% endif %}
                     </div>                      
                   </div>
                   <div class="d-flex justify-content-end scrollreveal-img">
                     <div class="img scrollreveal-img">
                       <img src="{{medias.1.image.url}}"  class="img-fluid d-block"  alt="{{medias.1.image.default_alt_text}}">
-                      <span>@:{{medias.1.image.author}}</span>
+                      {% if medias.1.image.author %}@: {{medias.1.image.author}}{% endif %}
                     </div>
                   </div>
                 </div>
@@ -141,13 +141,13 @@
                   <div class="d-flex justify-content-start">
                     <div class="img scrollreveal-img">
                       <img src="{{medias.2.image.url}}"   class="img-fluid d-block"  alt="{{medias.2.image.default_alt_text}}">
-                      <span>@:{{medias.2.image.author}}</span>
+                      {% if medias.2.image.author %}@: {{medias.2.image.author}}{% endif %}
                     </div>
                   </div>
                   <div class="d-flex justify-content-start">
                     <div class="img scrollreveal-img">
                       <img src="{{medias.3.image.url}}"  class="img-fluid d-block"alt="{{medias.3.image.default_alt_text}}">
-                      <span>@:{{medias.3.image.author}}</span>
+                      {% if medias.3.image.author %}@: {{medias.3.image.author}}{% endif %}
                     </div>
                   </div>
                 </div>
@@ -176,7 +176,7 @@
             {% for media in content.mediacontent_set.all %}
               <div class="img">
                 <img src="{{media.image.url}}" class="img-fluid" alt="{{media.image.default_alt_text}}">
-                <span>@:{{media.image.author}}</span>
+                {% if media.image.author %}@: {{media.image.author}}{% endif %}
               </div>
             {% endfor %}
           </div>
@@ -218,7 +218,7 @@
                   <div class="px-2 scrollreveal-img">
                     <div class="img w-100 ">
                       <img src="{{articles.0.image.url}}" class="card-img-top img-fluid border rounded-0" alt="{{articles.0.image.default_alt_text}}">
-                      <span>@:{{articles.0.image.author}}</span>
+                      {% if articles.0.image.author %}@: {{articles.0.image.author}}{% endif %}
                     </div>
                   </div>
                   <div class="card-body scrollreveal-text">
@@ -235,7 +235,7 @@
                 <div class="px-2 scrollreveal-img">
                   <div class="img w-100">
                     <img src="{{articles.1.image.url}}" class="card-img-top img-fluid rounded-0" alt="{{articles.1.image.default_alt_text}}">
-                    <span>@:{{articles.1.image.author}}</span>
+                    {% if articles.1.image.author %}@: {{articles.1.image.author}}{% endif %}
                   </div>
                   
                 </div>
@@ -274,7 +274,7 @@
                   <div class="px-2 scrollreveal-img">
                     <div class="img w-100">
                       <img src="{{articles.2.image.url}}" class="card-img-top img-fluid rounded-0" alt="{{articles.2.image.default_alt_text}}">
-                      <span>@:{{articles.2.image.author}}</span>
+                      {% if articles.2.image.author %}@: {{articles.2.image.author}}{% endif %}
                     </div>
                   </div>
                   <div class="card-body scrollreveal-text">
@@ -291,7 +291,7 @@
                   <div class="px-2 scrollreveal-img">
                     <div class="img w-100">
                       <img src="{{articles.3.image.url}}" class="card-img-top img-fluid rounded-0" alt="{{articles.3.image.default_alt_text}}">
-                      <span>@:{{articles.3.image.author}}</span>
+                      {% if articles.3.image.author %}@: {{articles.3.image.author}}{% endif %}
                     </div>    
                   </div>
                   <div class="card-body scrollreveal-text">

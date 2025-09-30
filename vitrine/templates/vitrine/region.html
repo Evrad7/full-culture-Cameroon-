@@ -34,7 +34,7 @@
                     <div class="me-1 me-sm-2 me-md-4">
                       <div class="img">
                         <img src="{{media.image.url}}" class=""  alt="{{media.image.default_alt_text}}">
-                        <span>@:{{media.image.author}}</span>
+                        {% if media.image.author %}@: {{media.image.author}}{% endif %}
                       </div>
                     </div>
                   {% endfor %}
@@ -54,7 +54,7 @@
                   {% for media in content.mediacontent_set.all %}
                     <div class="img scrollreveal-img">
                       <img src="{{media.image.url}}" class="img-fluid" alt="{{media.image.default_alt_text}}">
-                      <span>@:{{media.image.author}}</span>
+                      {% if media.image.author %}@: {{media.image.author}}{% endif %}
                     </div>
                   {% endfor %}
                 </div>
@@ -76,7 +76,7 @@
                     {% for media in content.mediacontent_set.all %}
                       <div class="img scrollreveal-img">
                         <img src="{{media.image.url}}" class="img-fluid" alt="{{media.image.default_alt_text}}" style="max-height: 500px;">
-                        <span>@:{{media.image.author}}</span>
+                        {% if media.image.author %}@: {{media.image.author}}{% endif %}
                       </div>
                     {% endfor %}
                   </div>
@@ -91,7 +91,7 @@
                     {% for media in content.mediacontent_set.all %}
                       <div class="img scrollreveal-img">
                         <img src="{{media.image.url}}" class="img-fluid" alt="{{media.image.default_alt_text}}" style="max-height: 500px;">
-                        <span>@:{{media.image.author}}</span>
+                        {% if media.image.author %}@: {{media.image.author}}{% endif %}
                       </div>
                     {% endfor %}
                   </div>
@@ -125,13 +125,13 @@
                           <div class="d-flex justify-content-end">
                             <div class="img scrollreveal-img">
                               <img src="{{medias.0.image.url}}" class="img-fluid d-block mt-5"  alt="{{medias.0.image.default_alt_text}}">
-                              <span>@:{{medias.0.image.author}}</span>
+                              {% if medias.0.image.author %}@: {{medias.0.image.author}}{% endif %}
                             </div>                      
                           </div>
                           <div class="d-flex justify-content-end">
                             <div class="img scrollreveal-img">
                               <img src="{{medias.1.image.url}}"  class="img-fluid d-block"  alt="{{medias.1.image.default_alt_text}}">
-                              <span>@:{{medias.1.image.author}}</span>
+                              {% if medias.1.image.author %}@: {{medias.1.image.author}}{% endif %}
                             </div>
                           </div>
                         </div>
@@ -139,13 +139,13 @@
                           <div class="d-flex justify-content-start">
                             <div class="img scrollreveal-img">
                               <img src="{{medias.2.image.url}}"   class="img-fluid d-block"  alt="{{medias.2.image.default_alt_text}}">
-                              <span>@:{{medias.2.image.author}}</span>
+                              {% if medias.2.image.author %}@: {{medias.2.image.author}}{% endif %}
                             </div>
                           </div>
                           <div class="d-flex justify-content-start">
                             <div class="img scrollreveal-img">
                               <img src="{{medias.3.image.url}}"  class="img-fluid d-block"alt="{{medias.3.image.default_alt_text}}">
-                              <span>@:{{medias.3.image.author}}</span>
+                              {% if medias.3.image.author %}@: {{medias.3.image.author}}{% endif %}
                             </div>
                           </div>
                         </div>

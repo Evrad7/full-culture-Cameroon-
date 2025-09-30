@@ -50,7 +50,7 @@
             <div class="col-4 col-lg-2 align-self-start text-center">
               <div class="img">
                 <img src="{{article.image.url}}" alt="{{article.image.default_alt_text}}" class="img-fluid">
-                <span>@:{{article.image.author}}</span>
+                {% if article.image.author %}@: {{article.image.author}}{% endif %}
               </div>
               
             </div>
